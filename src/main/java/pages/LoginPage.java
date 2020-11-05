@@ -8,7 +8,6 @@ public class LoginPage extends BasePage {
     public void navigateToLoginPage(String url) {
         driver.get(url);
     }
-
     public boolean isMainLogoDisplayed() {
         return isElementDisplayed(LOGO);
     }
