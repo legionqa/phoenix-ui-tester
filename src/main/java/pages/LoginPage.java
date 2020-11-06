@@ -12,6 +12,8 @@ public class LoginPage extends BasePage {
         return isElementDisplayed(LOGO);
     }
 
+
+
     public boolean isLogInBarDisplayed() {
         return isElementDisplayed(LOGIN_BAR);
     }
