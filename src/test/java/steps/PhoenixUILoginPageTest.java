@@ -3,6 +3,7 @@ package steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pages.LoginPage;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -33,5 +34,23 @@ public class PhoenixUILoginPageTest {
     public void verifyTheLogInBarIsVisible() {
         loginPage.takeScreenshot("LogInBarIsDisplayed");
         assertTrue(loginPage.isLogInBarDisplayed());
+    }
+
+    // Testing drop down language list
+
+    @When("User clicks on drop down languages list")
+    public void userClicksOnDropDownLanguagesList() {
+        loginPage.clickButton();
+    }
+
+    @And("User chooses {string} language")
+    public void userChoosesLanguage(String language) {
+        loginPage.chooseLanguage(language);
+
+    }
+
+    @Then("{string} according to chosen language is visible")
+    public void accordingToChosenLanguageIsVisible(String greeting) {
+        assertTrue(loginPage.isGreetingTextDisplayed(greeting));
     }
 }
