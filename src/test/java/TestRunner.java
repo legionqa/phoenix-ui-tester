@@ -8,6 +8,8 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(
         features = {"src/test/resources/PhoenixUILoginPageTest.feature"},
+  //      features = {"src/test/resources/PhoenixUIRegistrationPageTest.feature"},
+//        features = {"src/test/resources/PhoenixUIForgotPassPageTest.feature"},
         plugin = {"pretty", "html:target/cucumber-reports/"},
         glue = {"steps"}
 )
