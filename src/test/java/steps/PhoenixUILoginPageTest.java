@@ -145,8 +145,8 @@ public class PhoenixUILoginPageTest {
         loginPage.clickButtonLogIn();
     }
 
-    @Then("Error massage Неверный логин и пароль is visible")
-    public void errorMassageIsVisible() {
+    @Then("Error message Неверный логин и пароль is visible")
+    public void errormessageIsVisible() {
         assertTrue(loginPage.isErrorMessaeVisible());
     }
 

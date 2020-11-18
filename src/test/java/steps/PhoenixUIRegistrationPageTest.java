@@ -43,8 +43,8 @@ public class PhoenixUIRegistrationPageTest {
     }
 
 
-    @Then("The Error massage is not visible")
-    public void theErrorMassageThisFieldMustBeAValidEmailAddressIsNotVisible() {
+    @Then("The Error message is not visible")
+    public void theErrormessageThisFieldMustBeAValidEmailAddressIsNotVisible() {
         assertFalse(registrationPage.isEmailErrorMessaeVisible());
     }
 
@@ -173,8 +173,8 @@ public class PhoenixUIRegistrationPageTest {
         registrationPage.clickButtonRegister();
     }
 
-    @Then("Error massage: This field must be a valid email address is visible")
-    public void errorMassageThisFieldMustBeAValidEmailAddressIsVisible() {
+    @Then("Error message: This field must be a valid email address is visible")
+    public void errormessageThisFieldMustBeAValidEmailAddressIsVisible() {
         assertTrue(registrationPage.isEmailErrorMessaeVisible());
 
     }
@@ -189,8 +189,8 @@ public class PhoenixUIRegistrationPageTest {
         registrationPage.clickButtonRegister();
     }
 
-    @Then("Error massage This field is too short is visible")
-    public void errorMassageThisFieldIsTooShortMinimumIsFourCharactersIsVisible() {
+    @Then("Error message This field is too short is visible")
+    public void errormessageThisFieldIsTooShortMinimumIsFourCharactersIsVisible() {
         assertTrue(registrationPage.isNameErrorMessaeVisible());
     }
 
