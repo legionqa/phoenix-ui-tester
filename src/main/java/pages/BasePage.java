@@ -28,11 +28,23 @@ public abstract class BasePage {
         driver.findElement(By.xpath(xpath)).click();
     }
 
+    public String getElementInnerText(String xpath) {
+        String innerText = driver.findElement(By.xpath(xpath)).getAttribute("innerText");
+        return innerText;
+    }
     public String getElementValue(String xpath) {
-        String value = driver.findElement(By.xpath(xpath)).getAttribute("outerText");
+        String value = driver.findElement(By.xpath(xpath)).getAttribute("value");
         return value;
     }
+    public String getElementPlaceHolder(String xpath) {
+        String placeholder = driver.findElement(By.xpath(xpath)).getAttribute("placeholder");
+        return placeholder;
+    }
 
+    public String getElementTextContent(String xpath) {
+        String textContent = driver.findElement(By.xpath(xpath)).getAttribute("textContent");
+        return textContent;
+    }
     public void sendTheKeyToField(String xpath, String key) {
         driver.findElement(By.xpath(xpath)).sendKeys(key);
     }
