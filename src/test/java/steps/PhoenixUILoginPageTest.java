@@ -20,23 +20,23 @@ public class PhoenixUILoginPageTest {
 
     }
 
-    @Given("User navigates to {string} page")
-    public void userNavigatesToPage(String url) {
-        loginPage.navigateToLoginPage(url);
+    @Given("User navigates to login page")
+    public void userNavigatesToPage() {
+        loginPage.navigateToLoginPage();
 
     }
 
 
     @Then("Verify that Phoenix logo is displayed")
     public void verifyThatPhoenixLogoIsDisplayed() {
-        loginPage.takeScreenshot("MainLogoIsDisplayed");
+//        loginPage.takeScreenshot("MainLogoIsDisplayed");
         assertTrue(loginPage.isMainLogoDisplayed());
 
     }
 
     @And("Verify the Log in menu is visible")
     public void verifyTheLogInBarIsVisible() {
-        loginPage.takeScreenshot("LogInBarIsDisplayed");
+//        loginPage.takeScreenshot("LogInBarIsDisplayed");
         assertTrue(loginPage.isLogInBarDisplayed());
     }
 
@@ -55,25 +55,25 @@ public class PhoenixUILoginPageTest {
 
     @Then("{string} according to chosen language is visible")
     public void accordingToChosenLanguageIsVisible(String greeting) {
-        loginPage.takeScreenshot("GreeetingMessage");
+//        loginPage.takeScreenshot("GreeetingMessage");
         assertTrue(loginPage.isGreetingTextDisplayed(greeting));
     }
 
     @And("Log in button changed to {string}")
     public void logInButtonChangedTo(String buttonName) {
-        loginPage.takeScreenshot("ButtonChangeLanguage");
+//        loginPage.takeScreenshot("ButtonChangeLanguage");
         assertEquals(loginPage.buttonNameDisplayed(), buttonName);
     }
 
     @And("Create an account button changed to {string}")
     public void createAnAccountButtonChangedTo(String accountName) {
-        loginPage.takeScreenshot("CreateAccount");
+//        loginPage.takeScreenshot("CreateAccount");
         assertEquals(loginPage.accountNameDisplayed(), accountName);
     }
 
     @And("Forget password message changed to {string}")
     public void forgetPasswordMessageChangedTo(String forgetPass) {
-        loginPage.takeScreenshot("ForgetPasswordVisible");
+//        loginPage.takeScreenshot("ForgetPasswordVisible");
         assertEquals(loginPage.forgetPasswordDisplayed(), forgetPass);
     }
 //      Testing Log in menu

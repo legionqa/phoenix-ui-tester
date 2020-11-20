@@ -1,5 +1,7 @@
 package pages;
 
+import properties.PropertiesFile;
+
 public class LoginPage extends BasePage {
     public final static String LOGO = "//h1[@class='logo-name']";
     public final static String LOGIN_BAR = "//*[@id='ember608']";
@@ -15,8 +17,11 @@ public class LoginPage extends BasePage {
     public final static String FORGET_PASSWORD = "//*[@id='ember645']";
 
 
-    public void navigateToLoginPage(String url) {
-        driver.get(url);
+    public static String LOGIN_PAGE_URL;
+
+    public void navigateToLoginPage() {
+        PropertiesFile.readPropertiesFile();
+        driver.get(LOGIN_PAGE_URL);
     }
 
     public boolean isMainLogoDisplayed() {
