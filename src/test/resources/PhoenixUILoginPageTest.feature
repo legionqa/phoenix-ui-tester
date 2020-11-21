@@ -1,7 +1,7 @@
 Feature: Phoenix login page tests
 
   Background:
-    Given User navigates to "https://dashboard.phoenix-widget.com/login" page
+    Given User navigates to login page
 
 
   Scenario: Navigate to the login page and verify some components
