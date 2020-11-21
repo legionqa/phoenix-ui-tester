@@ -18,6 +18,8 @@ public class PropertiesFile {
             LoginPage.LOGIN_PAGE_URL = prop.getProperty("LoginPageUrl");
 
 
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
