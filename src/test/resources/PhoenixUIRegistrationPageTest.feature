@@ -11,7 +11,7 @@ Feature: Phoenix registration page tests
   Scenario Outline: Verify Email field
     When User types valid "<email>" in Email field
     And User clicks Registration button
-    Then The Error massage is not visible
+    Then The Error message is not visible
 
     Examples:
 
@@ -101,7 +101,7 @@ Feature: Phoenix registration page tests
 
     When User types "<email>" in Email field
     And Use clicks Registration button
-    Then Error massage: This field must be a valid email address is visible
+    Then Error message: This field must be a valid email address is visible
 
     Examples:
       | email                                            |
@@ -119,7 +119,7 @@ Feature: Phoenix registration page tests
 
     When User types "<short_name>" in Name field
     And Use clicks Registration buton
-    Then Error massage This field is too short is visible
+    Then Error message This field is too short is visible
 
     Examples:
       | short_name |

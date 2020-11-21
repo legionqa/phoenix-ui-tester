@@ -41,7 +41,7 @@ Feature: Phoenix login page tests
     When User types "<email>" to the Email field
     And User types "<pass>" to the Password field
     And User clicks Log in button
-    Then Error massage Неверный логин и пароль is visible
+    Then Error message Неверный логин и пароль is visible
 
     Examples:
 
