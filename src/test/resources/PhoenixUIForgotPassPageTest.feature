@@ -15,6 +15,7 @@ Feature: Phoenix ForgotPass page tests
       | email                   |
       | correct_email@gmail.com |
 
+
   Scenario Outline: Verify an Emailfield with incorrect input
     When User types invalid "<email>" to the email field
     And User clicks on Apply_button
