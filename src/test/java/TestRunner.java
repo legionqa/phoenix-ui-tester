@@ -7,13 +7,13 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 @CucumberOptions(
-//        features = {"src/test/resources/PhoenixUILoginPageTest.feature",
-//                "src/test/resources/PhoenixUIForgotPassPageTest.feature",
-//                "src/test/resources/PhoenixUIRegistrationPageTest.feature"},
+        features = {"src/test/resources/PhoenixUILoginPageTest.feature",
+                "src/test/resources/PhoenixUIForgotPassPageTest.feature",
+                "src/test/resources/PhoenixUIRegistrationPageTest.feature"},
 
 //        features = {"src/test/resources/PhoenixUILoginPageTest.feature"},
 //        features = {"src/test/resources/PhoenixUIForgotPassPageTest.feature"},
-       features = {"src/test/resources/PhoenixUIRegistrationPageTest.feature"},
+//       features = {"src/test/resources/PhoenixUIRegistrationPageTest.feature"},
         plugin = {"pretty", "html:target/cucumber-reports/"},
         glue = {"steps"}
 )
