@@ -5,7 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import pages.ForgotPassPage;
 import pages.LoginPage;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,97 +12,67 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PhoenixUILoginPageTest {
 
     private LoginPage loginPage;
-    private ForgotPassPage forgotPassPage;
 
     public PhoenixUILoginPageTest() {
         loginPage = new LoginPage();
-
     }
 
     @Given("User navigates to login page")
     public void userNavigatesToPage() {
         loginPage.navigateToLoginPage();
-
     }
 
+// visibility and links
 
-    @Then("Verify that Phoenix logo is displayed")
-    public void verifyThatPhoenixLogoIsDisplayed() {
+    @Then("Phoenix logo is visible")
+    public void phoenixLogoIsVisible() {
 //        loginPage.takeScreenshot("MainLogoIsDisplayed");
         assertTrue(loginPage.isMainLogoDisplayed());
-
     }
 
-    @And("Verify the Log in menu is visible")
-    public void verifyTheLogInBarIsVisible() {
+    @And("Change language button is visible")
+    public void changeLanguageButtonIsVisible() {
 //        loginPage.takeScreenshot("LogInBarIsDisplayed");
-        assertTrue(loginPage.isLogInBarDisplayed());
+        assertTrue(loginPage.isChangeLanguageButtonDisplayed());
     }
 
-    // Testing drop down language list
-
-    @When("User clicks on drop down languages list")
-    public void userClicksOnDropDownLanguagesList() {
-        loginPage.clickButtonChangeLanguage();
+    @And("Trade Up logo is visible")
+    public void tradeUpLogoIsVisible() {
+//        loginPage.takeScreenshot("LogInBarIsDisplayed");
+        assertTrue(loginPage.isTradeUpLogoDisplayed());
     }
 
-    @And("User chooses {string} language")
-    public void userChoosesLanguage(String language) {
-        loginPage.chooseLanguage(language);
-
+    @And("Login form is visible")
+    public void logInFormIsVisible() {
+//        loginPage.takeScreenshot("LogInBarIsDisplayed");
+        assertTrue(loginPage.isLogInFormDisplayed());
     }
 
-    @Then("{string} according to chosen language is visible")
-    public void accordingToChosenLanguageIsVisible(String greeting) {
-//        loginPage.takeScreenshot("GreeetingMessage");
-        assertTrue(loginPage.isGreetingTextDisplayed(greeting));
+    @When("User clicks {string} link")
+    public void userClicksLink(String link) {
+        loginPage.clickLink(link);
     }
 
-    @And("Log in button changed to {string}")
-    public void logInButtonChangedTo(String buttonName) {
-//        loginPage.takeScreenshot("ButtonChangeLanguage");
-        assertEquals(loginPage.buttonNameDisplayed(), buttonName);
+    @Then("{string} page opens")
+    public void pageOpens(String page) {
+        assertEquals(loginPage.ROOT_URL.concat(page), loginPage.getCurrentPageUrl());
     }
 
-    @And("Create an account button changed to {string}")
-    public void createAnAccountButtonChangedTo(String accountName) {
-//        loginPage.takeScreenshot("CreateAccount");
-        assertEquals(loginPage.accountNameDisplayed(), accountName);
+    @And("User clicks Forgot password link")
+    public void userClicksForgotPasswordLink() {
+        loginPage.clickForgotPasswordLink();
     }
 
-    @And("Forget password message changed to {string}")
-    public void forgetPasswordMessageChangedTo(String forgetPass) {
-//        loginPage.takeScreenshot("ForgetPasswordVisible");
-        assertEquals(loginPage.forgetPasswordDisplayed(), forgetPass);
-    }
-//      Testing Log in menu
-//     Positive tests
+    // languages
 
-    @When("User types {string} into the Email field")
-    public void userTypesTheIntoTheEmailField(String email) {
-        loginPage.typeValueEmailField(email);
-    }
-
-    @And("User types {string} into the Password field")
-    public void userTypesTheIntoThePasswordField(String pass) {
-        loginPage.typeValuePasswordField(pass);
-    }
-
-    @And("User clicks button Log in")
-    public void userClicksButtonLogIn() {
-        forgotPassPage = loginPage.clickForgotPasswordLink();
-
-    }
-
-    @Then("Login form is not visible")
-    public void loginFormIsNotVisible() {
-        assertTrue(loginPage.isMainLogoDisplayed());
-    }
-
-
-    @When("User  clicks Change language button")
+    @When("User clicks Change language button")
     public void userClicksChangeLanguageButton() {
-        loginPage.clickButtonChangeLanguage();
+        loginPage.clickChangeLanguageButton();
+    }
+
+    @And("User select English")
+    public void userSelectEnglish() {
+        loginPage.chooseLanguage("English");
     }
 
     @And("User select {string} language")
@@ -111,44 +80,77 @@ public class PhoenixUILoginPageTest {
         loginPage.chooseLanguage(language);
     }
 
-    @And("User clicks on Forgot password link")
-    public void userClicksOnForgotPasswordLink() {
-        forgotPassPage = loginPage.clickForgotPasswordLink();
+    @Then("Greeting message {string} is visible")
+    public void greetingMessageIsVisible(String greeting) {
+//        loginPage.takeScreenshot("GreeetingMessage");
+        assertTrue(loginPage.isGreetingTextDisplayed(greeting));
     }
 
-    @Then("Apply button changed to {string} according chosen language")
-    public void applyButtonChangedToAccordingChosenLanguage(String button) {
-        assertEquals(forgotPassPage.getButtonApplyInnerText(), button);
-
+    @And("Login button text is {string}")
+    public void logInButtonText(String loginText) {
+//        loginPage.takeScreenshot("ButtonChangeLanguage");
+        assertEquals(loginText, loginPage.getLoginButtonText());
     }
 
-    @And("Notification is displayed {string} according chosen language")
-    public void notificationIsDisplayedAccordingChosenLanguage(String note) {
-        assertEquals(forgotPassPage.getNotificationMessageInnerText(), note);
+    @And("Create an account button text is {string}")
+    public void createAnAccountButtonText(String createAccountText) {
+//        loginPage.takeScreenshot("CreateAccount");
+        assertEquals(createAccountText, loginPage.getCreateAnAccountButtonText());
     }
 
+    @And("Forgot your password text is {string}")
+    public void forgotYorPasswordLink(String forgotPasswordText) {
+//        loginPage.takeScreenshot("ForgetPasswordVisible");
+        assertEquals(forgotPasswordText, loginPage.getForgotPasswordLinkText());
+    }
 
-    //Negative test
+    // positive test
 
-    @When("User types {string} to the Email field")
+    @When("User types valid email in the Email field")
+    public void sendTextToEmailField() {
+        loginPage.sendTextToEmailField(loginPage.VALID_EMAIL);
+    }
+
+    @And("User types valid password in the Password field")
+    public void sendTextToPasswordField() {
+        loginPage.sendTextToPasswordField(loginPage.VALID_PASSWORD);
+    }
+
+    @And("User clicks Login button")
+    public void userClicksLoginButton() {
+        loginPage.clickLoginButton();
+    }
+
+    @Then("Main page with correct username opens")
+    public void mainPageOpens() {
+        assertEquals(loginPage.MAIN_PAGE_URL, loginPage.waitAndGetCurrentPageUrl(loginPage.MAIN_PAGE_URL));
+        assertEquals(loginPage.USERNAME, loginPage.getUserName());
+    }
+
+//Negative test
+
+    @When("User types {string} in the Email field")
     public void userTypesToTheEmailField(String email) {
-        loginPage.typeValueEmailField(email);
+        loginPage.sendTextToEmailField(email);
     }
 
-    @And("User types {string} to the Password field")
+    @And("User types {string} in the Password field")
     public void userTypesToThePasswordField(String pass) {
-        loginPage.typeValuePasswordField(pass);
+        loginPage.sendTextToPasswordField(pass);
     }
 
-    @And("User clicks Log in button")
-    public void userClicksLogInButton() {
-        loginPage.clickButtonLogIn();
+    @Then("Error massage is visible")
+    public void errorMassageIsVisible() {
+        assertTrue(loginPage.isErrorMessageVisible());
     }
 
-    @Then("Error message Неверный логин и пароль is visible")
-    public void errormessageIsVisible() {
-        assertTrue(loginPage.isErrorMessaeVisible());
+    @Then("Error message {string} is visible")
+    public void errorMessageIsVisible(String message) {
+        assertTrue(loginPage.isErrorMessageWithTextVisible(message));
     }
 
-
+    @Given("Click Log Out button")
+    public void clickLogOutButton() {
+        loginPage.clickLogoutButton();
+    }
 }

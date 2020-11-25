@@ -1,123 +1,208 @@
 package pages;
 
+import org.openqa.selenium.WebElement;
+import properties.PropertiesFile;
+import java.util.List;
+
 public class RegistrationPage extends BasePage {
-    public final static String REGISTER_FORM = "//*[@id='ember640']";
-    public final static String EMAIL_FIELD = "//*[@id='ember674-field']";
-    public final static String EMAIL_ERROR_MESSAGE = "//*[@id='ember674']/span[2]";
+
+    public static String REGISTRATION_PAGE_URL;
+
+    public final static String CHANGE_LANGUAGE_BUTTON = "//button[contains(text(), 'Change language')]";
+    public final static String LANGUAGE_OPTION = "//a[text()='%s']";
+    public final static String GREETING_TEXT = "//h3";
+    public final static String NAME_FIELD = "(//input[@type='text'])[1]";
+    public final static String PHONE_FIELD = "(//input[@type='text'])[2]";
+    public final static String PASS_FIELD = "(//input[@type='password'])[1]";
+    public final static String PASS_CONF_FIELD = "(//input[@type='password'])[2]";
+    public final static String REGISTRATION_BUTTON = "//button[@type='submit']";
+    public final static String SIGNIN_BUTTON = "//a[@href='/login']";
+    public final static String MAIN_LOGO = "//h1[@class='logo-name']";
+    public final static String MAIN_LOGO_ADD = "//span[@class='logo-color']";
+    public final static String REGISTER_FORM = "//form[@class='form-lg ember-view form']";
+    public final static String TRADEUP_LOGO = "//img[@src='../images/logo-c9952b5bf9d4c690b1cdba7f2f6e5089.png']";
+    public final static String SIGNIN_BUTTON_BY_TEXT = "//a[text()='Sign in']";
+    public final static String EMAIL_FIELD = "//input[@type='email']";
+    public final static String CURRENCY_LIST = "//select";
+    public final static String CURRENCY_PLACEHOLDER = "(//select/option)[1]";
+    public final static String SKYPE_FIELD = "//input[@placeholder='skype']";
+
+    public final static String CURRENCY_OPTION = "//option[text()='%s']";
+    public final static String NO_CURRENCY = "Account currency";
+    public final static String VALID_CURRENCY = "USD";
+
+    public final static String EMPTY_STRING = "";
+    public final static String CORRECT_EMAIL = "qwerty@qwerty.com";
+    public final static String INCORRECT_EMAIL = "qwerty";
+    public final static String CORRECT_NAME = "qwerty";
+    public final static String PASSWORD = "qwerty";
+
+    public final static String BLANK_EMAIL_MESSAGE_BY_TEXT = "//span[text()=\"This field can't be blank\"]";
+    public final static String INVALID_EMAIL_MESSAGE_BY_TEXT = "//span[text()='This field must be a valid email address']";
+    public final static String INVALID_NAME_MESSAGE_BY_TEXT = "//span[text()='This field is too short (minimum is 4 characters)']";
+    public final static String NO_CURRENCY_MESSAGE = "//div[@class='sweet-alert showSweetAlert visible']";
+    public final static String CHECK_DATA_MESSAGE = "//div[@class='toast toast-error']";
+    public final static String PASSWORD_ERROR_MESSAGE = "//div[@class='toast toast-warning']";
+    public final static String BLANK_EMAIL_MESSAGE = "//input[@type='email']/following::span[@class='help-block']";
+    public final static String INVALID_EMAIL_MESSAGE = "//input[@type='email']/following::span[@class='help-block']";
+    public final static String INVALID_NAME_MESSAGE = "//input[@type='text']/following::span[@class='help-block']";
+    public final static String NO_CURRENCY_TEXT1 = "//div[@class='sweet-alert showSweetAlert visible']//h2";
+    public final static String NO_CURRENCY_TEXT2 = "//div[@class='sweet-alert showSweetAlert visible']//p";
+    public final static String CHECK_DATA_TEXT1 = "//div[@class='toast-title']";
+    public final static String CHECK_DATA_TEXT2 = "//div[@class='toast-message']";
+
+
+    public final static String INVALID_EMAIL_SIGN = "//span[contains(@class,'glyphicon-remove')]//preceding-sibling::input[@type='email']";
+    public final static String VALID_EMAIL_SIGN = "//span[contains(@class,'glyphicon-ok')]//preceding-sibling::input[@type='email']";
+    public final static String INVALID_NAME_SIGN = "//span[contains(@class,'glyphicon-remove')]//preceding-sibling::input[@type='text']";
+    public final static String VALID_NAME_SIGN = "//span[contains(@class,'glyphicon-ok')]//preceding-sibling::input[@type='text']";
+
+
     public final static String NAME_ERROR_MESSAGE = "//*[@id='ember747']/span[2]";
-    public final static String PHONE_FIELD = "//*[@id='ember797-field']";
-    public final static String SKYPE_FIELD = "//*[@id='ember798-field']";
-    public final static String PASS_FIELD = "//*[@id='ember799-field']";
-    public final static String PASS_CONF_FIELD = "//*[@id='ember800-field']";
-    public final static String BUTTON_SIGN_IN = "//*[@id='ember862']";
     public final static String CURRENCY_FIELD = "//*[@id='ember769']";
-    public final static String PASSWORD_ERROR_MESSAGE = "//*[contains(text(),'Пароли не совпадают')]";
-    public final static String BUTTON_CHANGE_LANGUAGE = "//*[@id='ember841']";
 
-    public final static String BUTTON_REGISTER = "//*[@id='ember813']";
-    public final static String NAME_FIELD = "//*[@id='ember747-field']";
-
-    public void navigateToRegistrationPage(String url) {
-        driver.get(url);
+    public void navigateToRegistrationPage() {
+        PropertiesFile.readPropertiesFile();
+        driver.get(REGISTRATION_PAGE_URL);
     }
 
-    public boolean isRegisterFormDisplayed() {
+    public boolean isLogoVisible() {
+        return (isElementDisplayed(MAIN_LOGO)) && (isElementDisplayed(MAIN_LOGO_ADD));
+    }
+
+    public boolean isRegistrationFormDisplayed() {
         return isElementDisplayed(REGISTER_FORM);
     }
 
-    public void typeValueEmailField(String email) {
-        sendTheKeyToField(EMAIL_FIELD, email);
+    public boolean isEmailFieldVisible() {
+        return isElementDisplayed(EMAIL_FIELD);
     }
 
-    public boolean isEmailErrorMessaeVisible() {
-        return isElementDisplayed(EMAIL_ERROR_MESSAGE);
+    public boolean isSkypeFieldVisible() {
+        return isElementDisplayed(SKYPE_FIELD);
     }
 
-    public void clickButtonRegister() {
-        clickElementByXpath(BUTTON_REGISTER);
+    public boolean isChangeLanguageButtonDisplayed() {
+        return isElementDisplayed(CHANGE_LANGUAGE_BUTTON);
     }
 
-    public void typeValueNameField(String name) {
-        sendTheKeyToField(NAME_FIELD, name);
+    public boolean isTradeupLogoVisible() {
+        return isElementDisplayed(TRADEUP_LOGO);
     }
 
-    public boolean isNameErrorMessaeVisible() {
-        return isElementDisplayed(NAME_ERROR_MESSAGE);
-    }
-
-    public void typeValuePhoneField(String phone) {
-        sendTheKeyToField(PHONE_FIELD, phone);
-    }
-
-    public String getPhoneFieldValue() {
-
-        return getElementValue(PHONE_FIELD);
-
-    }
-
-    public void typeValueSkypeField(String skype) {
-        sendTheKeyToField(SKYPE_FIELD, skype);
-    }
-
-    public String getSkypeFieldValue() {
-
-        return getElementValue(SKYPE_FIELD);
-    }
-
-    public void typeValuePasswordField(String pass) {
-        sendTheKeyToField(PASS_FIELD, pass);
-    }
-//    public String getPasswordFieldValue() {
-//
-//        return getElementValue(PASS_FIELD);
-//    }
-
-    public void typeValuePasswordConfField(String passConf) {
-        sendTheKeyToField(PASS_CONF_FIELD, passConf);
-    }
-
-    //    public String getPasswordConfFieldValue() {
-//
-//        return getElementValue(PASS_CONF_FIELD);
-//    }
-    public boolean isButtonSignInVisible() {
-        return isElementDisplayed(BUTTON_SIGN_IN);
-    }
-
-    public void clickSignInButton() {
-        clickElementByXpath(BUTTON_SIGN_IN);
-    }
-
-    public void clickCurrencyField() {
-        clickElementByXpath(CURRENCY_FIELD);
+    public void sendValueToEmailField(String email) {
+        sendKeyToField(EMAIL_FIELD, email);
     }
 
     public void chooseCurrency(String currency) {
-        clickElementByXpath("//select[@id='ember769']/option[text()='" + currency + "']");
+        clickElementByXpath(CURRENCY_LIST);
+        clickElementByXpath(String.format(CURRENCY_OPTION, currency));
+    }
 
+    public boolean isBlankEmailMessageVisible() {
+        return isElementDisplayed(BLANK_EMAIL_MESSAGE_BY_TEXT);
     }
-    public String getCurrencyFieldValue(){
-        return getElementValue(CURRENCY_FIELD);
+
+    public boolean isIncorrectEmailMessageVisible() {
+        return isElementDisplayed(INVALID_EMAIL_MESSAGE_BY_TEXT);
     }
-    public boolean isPasswordErrorMessageVisible() {
+
+    public boolean isInvalidNameMessageVisible() {
+        return isElementDisplayed(INVALID_NAME_MESSAGE_BY_TEXT);
+    }
+
+    public boolean isNoCurrencyErrorMessageVisible() {
+        return isElementDisplayed(NO_CURRENCY_MESSAGE);
+    }
+
+    public boolean isCheckDataErrorMessageVisible() {
+        return isElementDisplayed(CHECK_DATA_MESSAGE);
+    }
+
+    public boolean isPasswordsErrorMessageVisible() {
         return isElementDisplayed(PASSWORD_ERROR_MESSAGE);
     }
 
-    public void clickChangeLanguageButton(){
-        clickElementByXpath(BUTTON_CHANGE_LANGUAGE);
+    public boolean isInvalidEmailSignVisible() {
+        return isElementDisplayed(INVALID_EMAIL_SIGN);
+    }
+
+    public boolean isValidEmailSignVisible() {
+        return isElementDisplayed(VALID_EMAIL_SIGN);
+    }
+
+    public boolean isInvalidNameSignVisible() {
+        return isElementDisplayed(INVALID_NAME_SIGN);
+    }
+
+    public boolean isValidNameSignVisible() {
+        return isElementDisplayed(VALID_NAME_SIGN);
+    }
+
+    public void clickRegistrationButton() {
+        clickElementByXpath(REGISTRATION_BUTTON);
+    }
+
+    public void sendValueToNameField(String name) {
+        sendKeyToField(NAME_FIELD, name);
+    }
+
+    public void sendValueToPasswordField(String name) {
+        sendKeyToField(PASS_FIELD, name);
+    }
+
+    public void sendValueToPasswordConfirmationField(String name) {
+        sendKeyToField(PASS_CONF_FIELD, name);
+    }
+
+    public void clickSignInButton() {
+        clickElementByXpath(SIGNIN_BUTTON_BY_TEXT);
+    }
+
+    public void clickChangeLanguageButton() {
+        clickElementByXpath(CHANGE_LANGUAGE_BUTTON);
     }
 
     public void chooseLanguage(String language) {
-        clickElementByXpath("//a[text()='" + language + "']");
+        clickElementByXpath(String.format(LANGUAGE_OPTION, language));
     }
 
-    public String getEmailFieldPlaceHolder() {
-        return getElementPlaceHolder(EMAIL_FIELD);
+    public String getGreetingText() {
+        return getElementInnerText(GREETING_TEXT);
+    }
+
+    public String getBlankEmailFieldMessageText() {
+        return getElementInnerText(BLANK_EMAIL_MESSAGE);
+    }
+
+    public String getInvalidEmailFieldMessageText() {
+        return getElementInnerText(INVALID_EMAIL_MESSAGE);
+    }
+
+    public String getInvalidNameFieldMessageText() {
+        return getElementInnerText(INVALID_NAME_MESSAGE);
+    }
+
+    public String getNoCurrencyMessageText() {
+        return getElementInnerText(NO_CURRENCY_TEXT1).concat(getElementInnerText(NO_CURRENCY_TEXT2));
+    }
+
+    public String getCheckDataErrorMessageText() {
+        return getElementInnerText(CHECK_DATA_TEXT1).concat(getElementInnerText(CHECK_DATA_TEXT2));
+    }
+
+    public String getPasswordErrorMessageText() {
+        return getElementInnerText(CHECK_DATA_TEXT2);
     }
 
     public String getNameFieldPlaceHolder() {
         return getElementPlaceHolder(NAME_FIELD);
     }
+
+    public String getCurrencyPlaceholder() {
+        return getElementInnerText(CURRENCY_PLACEHOLDER);
+    }
+
     public String getPhoneFieldPlaceHolder() {
         return getElementPlaceHolder(PHONE_FIELD);
     }
@@ -129,12 +214,16 @@ public class RegistrationPage extends BasePage {
     public String getPassConfFieldPlaceHolder() {
         return getElementPlaceHolder(PASS_CONF_FIELD);
     }
-    public String getButtonRegisterInnerText() {
-        return getElementInnerText(BUTTON_REGISTER);
+
+    public String getRegistrationButtonText() {
+        return getElementInnerText(REGISTRATION_BUTTON);
     }
 
-    public String getSkypeFieldPlaceHolder() {
-        return getElementPlaceHolder(SKYPE_FIELD);
+    public String getSigninButtonText() {
+        return getElementInnerText(SIGNIN_BUTTON);
     }
 
+    public void reloadPage() {
+        driver.navigate().refresh();
+    }
 }
