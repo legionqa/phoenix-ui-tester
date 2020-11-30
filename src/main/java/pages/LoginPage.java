@@ -3,21 +3,33 @@ package pages;
 import properties.PropertiesFile;
 
 public class LoginPage extends BasePage {
-    public final static String LOGO = "//h1[@class='logo-name']";
-    public final static String LOGIN_BAR = "//*[@id='ember608']";
-    public final static String BUTTON_CHANGE_LANGUAGE = "//*[@id='ember696']";
-    public final static String BUTTON_LOG_IN = "//*[@id='ember637']";
-    public final static String ERROR_MESSAGE = "//*[contains(text(),'Ошибка')]";
-
-
-    public final static String BUTTON_NAME = "//button[@id='ember637']";
-    public final static String ACCOUNT_NAME = "//*[@id='ember710']";
-    public final static String EMAIL_FIELD = "//*[@id='ember621']";
-    public final static String PASSWORD_FIELD = "//*[@id='ember622']";
-    public final static String FORGET_PASSWORD = "//*[@id='ember645']";
-
-
     public static String LOGIN_PAGE_URL;
+    public static String MAIN_PAGE_URL;
+    public static String ROOT_URL;
+
+    public static String VALID_EMAIL;
+    public static String VALID_PASSWORD;
+    public static String USERNAME;
+
+    public final static String LOGO = "//h1[@class='logo-name']";
+    public final static String LOGO_ADD = "//span[@class='logo-color']";
+    public final static String GREETING_MESSAGE = "//h3[text()='%s']";
+    public final static String LOGIN_FORM = "//form[@class='ember-view form']";
+    public final static String CHANGE_LANGUAGE_BUTTON = "//button[contains(text(), 'Change language')]";
+    public final static String LANGUAGE_OPTION = "//a[text()='%s']";
+    public final static String LOGIN_BUTTON = "//button[@type='submit']";
+    public final static String TRADEUP_LOGO = "//img[@src='../images/logo-c9952b5bf9d4c690b1cdba7f2f6e5089.png']";
+    public final static String LINK_BY_TEXT = "//a[text()='%s']";
+    public final static String CREATE_ACCOUNT_BUTTON = "//a[@href='/register']";
+    public final static String EMAIL_FIELD = "//input[@type='email']";
+    public final static String PASSWORD_FIELD = "//input[@type='password']";
+    public final static String FORGET_PASSWORD_LINK = "//a[@href='/forgotpass']";
+
+    public final static String MAIN_PAGE_USERNAME = "//h2[@class='m-b-xs']";
+    public final static String ERROR_MESSAGE = "//div[@class='toast toast-error']";
+    public final static String ERROR_MESSAGE_TEXT = "//div[@class='toast-title'][text()='%s']";
+
+    public final static String LOGOUT_BUTTON = "//i[@class='fa-lg ember-view fa fa-sign-out']";
 
     public void navigateToLoginPage() {
         PropertiesFile.readPropertiesFile();
@@ -25,62 +37,79 @@ public class LoginPage extends BasePage {
     }
 
     public boolean isMainLogoDisplayed() {
-        return isElementDisplayed(LOGO);
+        return (isElementDisplayed(LOGO)) && (isElementDisplayed(LOGO_ADD));
     }
 
-    public boolean isLogInBarDisplayed() {
-        return isElementDisplayed(LOGIN_BAR);
+    public boolean isLogInFormDisplayed() {
+        return isElementDisplayed(LOGIN_FORM);
     }
 
-    public void clickButtonChangeLanguage() {
-        clickElementByXpath(BUTTON_CHANGE_LANGUAGE);
+    public boolean isChangeLanguageButtonDisplayed() {
+        return isElementDisplayed(LOGIN_FORM);
+    }
+
+    public boolean isTradeUpLogoDisplayed() {
+        return isElementDisplayed(TRADEUP_LOGO);
+    }
+
+    public void clickChangeLanguageButton() {
+        clickElementByXpath(CHANGE_LANGUAGE_BUTTON);
     }
 
     public void chooseLanguage(String language) {
-        clickElementByXpath("//a[text()='" + language + "']");
+        clickElementByXpath(String.format(LANGUAGE_OPTION, language));
     }
-
 
     public boolean isGreetingTextDisplayed(String greeting) {
-        return isElementDisplayed("//*[contains(text(),'" + greeting + "')]");
+        return isElementDisplayed(String.format(GREETING_MESSAGE, greeting));
     }
 
-
-    public String buttonNameDisplayed() {
-        return getElementInnerText(BUTTON_NAME);
+    public void clickLink(String link) {
+        clickElementByXpath(String.format(LINK_BY_TEXT, link));
     }
 
-    public String accountNameDisplayed() {
-        return getElementInnerText(ACCOUNT_NAME);
+    public String getLoginButtonText() {
+        return getElementInnerText(LOGIN_BUTTON);
     }
 
-    public void typeValueEmailField(String email) {
-        sendTheKeyToField(EMAIL_FIELD, email);
+    public String getCreateAnAccountButtonText() {
+        return getElementInnerText(CREATE_ACCOUNT_BUTTON);
     }
 
-    public void typeValuePasswordField(String pass) {
-        sendTheKeyToField(PASSWORD_FIELD, pass);
+    public void sendTextToEmailField(String email) {
+        sendKeyToField(EMAIL_FIELD, email);
     }
 
-    public void clickButtonLogIn() {
-        clickElementByXpath(BUTTON_LOG_IN);
+    public void sendTextToPasswordField(String pass) {
+        sendKeyToField(PASSWORD_FIELD, pass);
     }
 
-    public boolean isMainLogoVisible() {
-        return isElementDisplayed(LOGO);
+    public String getUserName() {
+        return getElementInnerText(MAIN_PAGE_USERNAME);
     }
 
-    public boolean isErrorMessaeVisible() {
+    public void clickLoginButton() {
+        clickElementByXpath(LOGIN_BUTTON);
+    }
+
+    public boolean isErrorMessageVisible() {
         return isElementDisplayed(ERROR_MESSAGE);
     }
 
-    public String forgetPasswordDisplayed() {
-        return getElementInnerText(FORGET_PASSWORD);
+    public boolean isErrorMessageWithTextVisible(String text) {
+        return isElementDisplayed(String.format(ERROR_MESSAGE_TEXT, text));
     }
 
-    public ForgotPassPage clickForgotPasswordLink() {
-        clickElementByXpath(FORGET_PASSWORD);
-        return new ForgotPassPage();
+    public String getForgotPasswordLinkText() {
+        return getElementInnerText(FORGET_PASSWORD_LINK);
+    }
+
+    public void clickForgotPasswordLink() {
+        clickElementByXpath(FORGET_PASSWORD_LINK);
+    }
+
+    public void clickLogoutButton() {
+        clickElementByXpath(LOGOUT_BUTTON);
     }
 
 }

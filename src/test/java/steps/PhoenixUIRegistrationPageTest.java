@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import pages.LoginPage;
 import pages.RegistrationPage;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,258 +17,276 @@ public class PhoenixUIRegistrationPageTest {
 
     public PhoenixUIRegistrationPageTest() {
         registrationPage = new RegistrationPage();
-
     }
 
-    @Given("User open {string} page")
-    public void userOnenPage(String url) {
-        registrationPage.navigateToRegistrationPage(url);
-
+    @Given("User navigates to Registration page")
+    public void userNavigatesToRegistrationPage() {
+        registrationPage.navigateToRegistrationPage();
     }
 
-    @Then("Verify that registration form is displayed")
-    public void verifyThatRegistrationFormIsDisplayed() {
-        assertTrue(registrationPage.isRegisterFormDisplayed());
-    }
-//Positive tests
+//  visibility and links
 
-    @When("User types valid {string} in Email field")
-    public void userTypesValidInEmailField(String email) {
-        registrationPage.typeValueEmailField(email);
-
+    @When("User clicks Change language button - Registration page")
+    public void userClicksChangeLanguageButton() {
+        registrationPage.clickChangeLanguageButton();
     }
 
     @And("User clicks Registration button")
     public void userClicksRegistrationButton() {
-        registrationPage.clickButtonRegister();
+        registrationPage.clickRegistrationButton();
     }
 
-
-    @Then("The Error message is not visible")
-    public void theErrormessageThisFieldMustBeAValidEmailAddressIsNotVisible() {
-        assertFalse(registrationPage.isEmailErrorMessaeVisible());
+    @And("User chooses {string} language - Registration page")
+    public void userChoosesLanguageRegistrationPage(String language) {
+        registrationPage.chooseLanguage(language);
     }
 
-
-    @When("User types {string} more than four chars in Name field")
-    public void userTypesMoreThanCharsInNameField(String name) {
-        registrationPage.typeValueNameField(name);
+    @Then("Greeting message {string} is visible - Registration page")
+    public void greetingMessageTextIs(String text) {
+        assertEquals(text, registrationPage.getGreetingText());
     }
 
-    @And("User clicks Register button")
-    public void userClicksRegisterButton() {
-        registrationPage.clickButtonRegister();
+    @And("Name field placeholder is {string}")
+    public void nameFieldPlaceholderIs(String text) {
+        assertEquals(text, registrationPage.getNameFieldPlaceHolder());
     }
 
-    @Then("Error message: This field is too short is not visible")
-    public void errorMessageThisFieldIsTooShortMinimumIsCharactersIsNotVisible() {
-        assertFalse(registrationPage.isNameErrorMessaeVisible());
-
+    @And("Currency field placeholder is {string}")
+    public void currencyFieldPlaceholderIs(String text) {
+        assertEquals(text, registrationPage.getCurrencyPlaceholder());
     }
 
-    @When("User types {string} in Enter your phone number  field")
-    public void userTypesInEnterYourPhoneNumberField(String phone) {
-        registrationPage.typeValuePhoneField(phone);
+    @And("Phone field placeholder is {string}")
+    public void phoneFieldPlaceholderIs(String text) {
+        assertEquals(text, registrationPage.getPhoneFieldPlaceHolder());
     }
 
-    @And("User clicks button of Registration")
-    public void userClicksButtonRegistration() {
-        registrationPage.clickButtonRegister();
+    @And("Password field placeholder is {string}")
+    public void passwordFieldPlaceholderIs(String text) {
+        assertEquals(text, registrationPage.getPassFieldPlaceHolder());
     }
 
-
-    @Then("User verifies the {string}value is visible in Enter your phone number field")
-    public void userVerifiesTheValueIsVisibleInEnterYourPhoneNumberField(String phone) {
-        assertEquals(registrationPage.getPhoneFieldValue(), phone);
+    @And("Password Confirmation field placeholder is {string}")
+    public void passwordConfirmationFieldPlaceholderIs(String text) {
+        assertEquals(text, registrationPage.getPassConfFieldPlaceHolder());
     }
 
-
-    @When("User types {string} in Skype field")
-    public void userTypesInSkypeField(String skype) {
-        registrationPage.typeValueSkypeField(skype);
+    @And("Registration button text is {string}")
+    public void registrationButtonTextIs(String text) {
+        assertEquals(text, registrationPage.getRegistrationButtonText());
     }
 
-    @And("User clicks button registration")
-    public void userClicksButonRegistration() {
-        registrationPage.clickButtonRegister();
+    @And("Sign in button text is {string} - Registration page")
+    public void signInButtonTextIsRegistrationPage(String text) {
+        assertEquals(text, registrationPage.getSigninButtonText());
     }
 
-    @Then("User verifies the {string} value is visible in Skype field")
-    public void userVerifiesTheValueIsVisibleInSkypeField(String skype) {
-        assertEquals(registrationPage.getSkypeFieldValue(), skype);
-
+    @Then("Phoenix logo is visible - Registration page")
+    public void phoenixLogoIsVisible() {
+        assertTrue(registrationPage.isLogoVisible());
     }
 
-
-    @When("User types {string} in Password field")
-    public void userTypesInPasswordField(String pass) {
-        registrationPage.typeValuePasswordField(pass);
+    @And("Registration form is visible")
+    public void registrationFormIsVisible() {
+        assertTrue(registrationPage.isRegistrationFormDisplayed());
     }
 
-    @And("User types {string} in Password confirmation field")
-    public void userTypesInPasswordConfirmationField(String passConf) {
-        registrationPage.typeValuePasswordConfField(passConf);
+    @And("Email field is visible")
+    public void emailFieldIsVisible() {
+        assertTrue(registrationPage.isEmailFieldVisible());
     }
 
-    @And("User types valid email {string} in Email field")
-    public void userTypesValidEmailInEmailField(String email) {
-        registrationPage.typeValueEmailField(email);
+    @And("Skype field is visible")
+    public void skypeFieldIsVisible() {
+        assertTrue(registrationPage.isSkypeFieldVisible());
     }
 
-    @And("User types valid name {string} in Name field")
-    public void userTypesValidNameInNameField(String name) {
-        registrationPage.typeValueNameField(name);
+    @And("Change language button is visible - Registration page")
+    public void changeLanguageButtonIsVisible() {
+        assertTrue(registrationPage.isChangeLanguageButtonDisplayed());
     }
 
-    @And("User clicks Registration Button")
-    public void userClicksRegistratButton() {
-        registrationPage.clickButtonRegister();
+    @And("Trade Up logo is visible - Registration page")
+    public void tradeUpLogoIsVisibleRegistrationPage() {
+        assertTrue(registrationPage.isTradeupLogoVisible());
     }
 
-    @Then("Button Sign in is not visible")
-    public void registrationMenuIsNotVisible() {
-        assertTrue(registrationPage.isButtonSignInVisible());
-
+    @And("User select English - Registration page")
+    public void userSelectEnglish() {
+        registrationPage.chooseLanguage("English");
     }
 
-    @When("User clicks on button Sign In")
-    public void userClicksOnButtonSignIn() {
+    @When("User clicks Sign in button - Registration page")
+    public void userClicksSigninButton() {
         registrationPage.clickSignInButton();
-
     }
 
-    @Then("Button Sign in is not displayed")
-    public void registrationFormIsNotDisplayed() {
-        assertFalse(registrationPage.isButtonSignInVisible());
-
-
+    @Then("Login page opens - Registration page")
+    public void pageOpensRegistrationPage() {
+        assertEquals(LoginPage.LOGIN_PAGE_URL, registrationPage.getCurrentPageUrl());
     }
 
-    @When("User clicks on drop down currency list")
-    public void userClicksOnDropDownCurrencyList() {
-        registrationPage.clickCurrencyField();
+// Negative tests
+
+    @When("User sets E-mail field empty")
+    public void userSetsEMailFieldEmpty() {
+        registrationPage.sendValueToEmailField(registrationPage.EMPTY_STRING);
     }
-
-    @And("User chooses {string}")
-    public void userChooses(String currency) {
-        registrationPage.chooseCurrency(currency);
-
-    }
-
-    @Then("Currency field shows chosen currency {string}")
-    public void currencyFieldShowsChosenCurrency(String currency) {
-
-        assertEquals(registrationPage.getCurrencyFieldValue(), currency);
-    }
-
-
-    //Negative tests
 
     @When("User types {string} in Email field")
     public void userTypesInEmailField(String email) {
-        registrationPage.typeValueEmailField(email);
-    }
-
-    @And("Use clicks Registration button")
-    public void useClicksRegistrationButton() {
-        registrationPage.clickButtonRegister();
-    }
-
-    @Then("Error message: This field must be a valid email address is visible")
-    public void errormessageThisFieldMustBeAValidEmailAddressIsVisible() {
-        assertTrue(registrationPage.isEmailErrorMessaeVisible());
-
+        registrationPage.sendValueToEmailField(email);
     }
 
     @When("User types {string} in Name field")
     public void userTypesInNameField(String name) {
-        registrationPage.typeValueNameField(name);
+        registrationPage.sendValueToNameField(name);
     }
 
-    @And("Use clicks Registration buton")
-    public void useClicksRegistrationButon() {
-        registrationPage.clickButtonRegister();
+    @Then("Error message This field can't be blank is visible")
+    public void blankEmailMessageIsVisible() {
+        assertTrue(registrationPage.isBlankEmailMessageVisible());
     }
 
-    @Then("Error message This field is too short is visible")
-    public void errormessageThisFieldIsTooShortMinimumIsFourCharactersIsVisible() {
-        assertTrue(registrationPage.isNameErrorMessaeVisible());
+    @And("Invalid sign in the E-mail field is visible")
+    public void invalidEmailSignIsVisible() {
+        assertTrue(registrationPage.isInvalidEmailSignVisible());
     }
 
-
-    @When("User types {string} in Password_field")
-    public void userTypesInPassword_field(String pass) {
-        registrationPage.typeValuePasswordField(pass);
+    @And("Invalid sign in the Name field is visible")
+    public void invalidNameSignIsVisible() {
+        assertTrue(registrationPage.isInvalidNameSignVisible());
     }
 
-    @And("User types {string} in Password_confirmation field")
-    public void userTypesInPassword_confirmationField(String passConf) {
-        registrationPage.typeValuePasswordConfField(passConf);
+    @And("Valid sign in the E-mail field is visible")
+    public void validSignInTheEMailFieldIsVisible() {
+        assertTrue(registrationPage.isValidEmailSignVisible());
     }
 
-    @And("User types valid email {string} in Email_field")
-    public void userTypesValidEmailInEmail_field(String email) {
-        registrationPage.typeValueEmailField(email);
+    @And("Valid sign in the Name field is visible")
+    public void validSignInTheNameFieldIsVisible() {
+        assertTrue(registrationPage.isValidNameSignVisible());
     }
 
-    @And("User types valid name {string} in Name_field")
-    public void userTypesValidNameInName_field(String name) {
-        registrationPage.typeValueNameField(name);
+    @Then("Error massage This field must be a valid email address is visible")
+    public void incorrectEmailMessageIsVisible() {
+        assertTrue(registrationPage.isIncorrectEmailMessageVisible());
     }
 
-    @And("User clicks Registration_Button")
-    public void userClicksRegistration_Button() {
-        registrationPage.clickButtonRegister();
+    @Then("Error massage This field is too short is visible")
+    public void incorrectNameMessageIsVisible() {
+        assertTrue(registrationPage.isInvalidNameMessageVisible());
     }
 
-    @Then("Error message: Пароли не совпадают is visible")
-    public void errorMessageIsVisible() {
-        assertTrue(registrationPage.isPasswordErrorMessageVisible());
+    @When("User types qwerty@qwerty.com in the E-mail field")
+    public void typeCorrectField() {
+        registrationPage.sendValueToEmailField(registrationPage.CORRECT_EMAIL);
     }
 
-
-    @When("User clicks on Change language button")
-    public void userClicksOnChangeLanguageButton() {
-        registrationPage.clickChangeLanguageButton();
+    @And("User types qwerty in the Name field")
+    public void typeCorrectName() {
+        registrationPage.sendValueToNameField(registrationPage.CORRECT_NAME);
     }
 
-    @And("User clicks on {string}")
-    public void userClicksOn(String language) {
-        registrationPage.chooseLanguage(language);
+    @And("User selects Account currency in the Currency menu")
+    public void selectNoCurrency() {
+        registrationPage.chooseCurrency(registrationPage.NO_CURRENCY);
     }
 
-    @Then("In Email field is displayed {string}")
-    public void inEmailFieldIsDisplayed(String email) {
-        assertEquals(registrationPage.getEmailFieldPlaceHolder(), email);
+    @Then("Currency not selected error massage is visible")
+    public void noCurrencyErrorMassageIsVisible() {
+        assertTrue(registrationPage.isNoCurrencyErrorMessageVisible());
     }
 
-    @And("In Name field is displayed {string}")
-    public void inNameFieldIsDisplayed(String name) {
-        assertEquals(registrationPage.getNameFieldPlaceHolder(), name);
+    @Then("Check your data error massage is visible")
+    public void checkDataErrorMassageIsVisible() {
+        assertTrue(registrationPage.isCheckDataErrorMessageVisible());
     }
 
-    @And("In Phone field is displayed {string}")
-    public void inPhoneFieldIsDisplayed(String phone) {
-        assertEquals(registrationPage.getPhoneFieldPlaceHolder(), phone);
+    @Then("Passwords don't match error massage is visible")
+    public void passwordsErrorMassageIsVisible() {
+        assertTrue(registrationPage.isPasswordsErrorMessageVisible());
     }
 
-    @And("In Password field is displayed {string}")
-    public void inPasswordFieldIsDisplayed(String pass) {
-        assertEquals(registrationPage.getPassFieldPlaceHolder(), pass);
+    @And("User selects USD in the Currency menu")
+    public void userSelectsUSDInTheCurrencyMenu() {
+        registrationPage.chooseCurrency(registrationPage.VALID_CURRENCY);
     }
 
-    @And("In Password Confirmation field is displayed {string}")
-    public void inPasswordConfirmationFieldIsDisplayed(String passConf) {
-        assertEquals(registrationPage.getPassConfFieldPlaceHolder(), passConf);
+    @And("User sets Password field empty")
+    public void userSetsPasswordFieldEmpty() {
+        registrationPage.sendValueToPasswordField(registrationPage.EMPTY_STRING);
     }
 
-    @And("Registration button changed to {string}")
-    public void registrationButtonChangedTo(String button) {
-        assertEquals(registrationPage.getButtonRegisterInnerText(), button);
+    @And("User sets Password confirmation field empty")
+    public void userSetsPasswordConfirmationFieldEmpty() {
+        registrationPage.sendValueToPasswordConfirmationField(registrationPage.EMPTY_STRING);
     }
 
-    @And("In Skype field is displayed {string}")
-    public void inSkypeFieldIsDisplayed(String skype) {
-        assertEquals(registrationPage.getSkypeFieldPlaceHolder(), skype);
+    @And("User enters {string} into the Password field")
+    public void userEntersIntoThePasswordField(String text) {
+        registrationPage.sendValueToPasswordField(text);
+    }
+
+    @And("User enters {string} into the Password confirmation field")
+    public void userEntersIntoThePasswordConfirmationField(String text) {
+        registrationPage.sendValueToPasswordConfirmationField(text);
+    }
+
+// Language tests
+
+    @Then("Blank field error massage {string} is visible")
+    public void blankFieldErrorMassageIsVisible(String text) {
+        assertEquals(text, registrationPage.getBlankEmailFieldMessageText());
+    }
+
+    @When("User types qwerty in the E-mail field")
+    public void userTypesQwertyInTheEMailField() {
+        registrationPage.sendValueToEmailField(registrationPage.INCORRECT_EMAIL);
+    }
+
+    @Then("Invalid E-mail message {string} is visible")
+    public void invalidEMailMessageIsVisible(String text) {
+        assertEquals(text, registrationPage.getInvalidEmailFieldMessageText());
+    }
+
+    @When("User sets Name field empty")
+    public void userSetsNameFieldEmpty() {
+        registrationPage.sendValueToNameField(registrationPage.EMPTY_STRING);
+    }
+
+    @Then("Short name error message {string} is visible")
+    public void shortNameRrorMessageIsVisible(String text) {
+        assertEquals(text, registrationPage.getInvalidNameFieldMessageText());
+    }
+
+    @And("User selects {string} in the Currency menu")
+    public void userSelectsInTheCurrencyMenu(String text) {
+        registrationPage.chooseCurrency(text);
+    }
+
+    @Then("Currency not selected message {string} is visible")
+    public void currencyNotSelectedMessageIsVisible(String text) {
+        assertEquals(text, registrationPage.getNoCurrencyMessageText());
+    }
+
+    @Then("Check data message {string} is visible")
+    public void checkDataMessageText(String text) {
+        assertEquals(text, registrationPage.getCheckDataErrorMessageText());
+    }
+
+    @And("User enters qwerty into the Password field")
+    public void userEntersPassword() {
+        registrationPage.sendValueToPasswordField(registrationPage.PASSWORD);
+    }
+
+    @Then("Passwords don't match error massage {string} is visible")
+    public void passwordsErrorMassageText(String text) {
+        assertEquals(text, registrationPage.getPasswordErrorMessageText());
+    }
+
+    @And("The page is reloaded")
+    public void pageIsReloaded() {
+        registrationPage.reloadPage();
     }
 }

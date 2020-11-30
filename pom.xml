@@ -45,18 +45,12 @@
             <artifactId>webdrivermanager</artifactId>
             <version>4.2.2</version>
         </dependency>
-
-
-
     </dependencies>
-
-
 
     <properties>
         <maven.compiler.release>12</maven.compiler.release>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
     </properties>
-
 
     <build>
         <pluginManagement>
