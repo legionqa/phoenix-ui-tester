@@ -7,7 +7,14 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 @CucumberOptions(
-        features = {"src/test/resources/PhoenixUILoginPageTest.feature"},
+//        features = {"src/test/resources/PhoenixUILoginPageTest.feature",
+//                "src/test/resources/PhoenixUIForgotPassPageTest.feature",
+//                "src/test/resources/PhoenixUIRegistrationPageTest.feature"},
+
+//        features = {"src/test/resources/PhoenixUILoginPageTest.feature"},
+//        features = {"src/test/resources/PhoenixUIForgotPassPageTest.feature"},
+//       features = {"src/test/resources/PhoenixUIRegistrationPageTest.feature"},
+       features = {"src/test/resources/PhoenixUIOverviewPageTest.feature"},
         plugin = {"pretty", "html:target/cucumber-reports/"},
         glue = {"steps"}
 )
@@ -19,11 +26,10 @@ public class TestRunner {
     @BeforeClass
     public static void setup() {
         SharedDriver.startWebDriver();
-
     }
 
-    @AfterClass
-    public static void tearDown() {
-        SharedDriver.closeDriver();
-    }
+//    @AfterClass
+//    public static void tearDown() {
+//        SharedDriver.closeDriver();
+//    }
 }
