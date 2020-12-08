@@ -26,19 +26,16 @@ public abstract class BasePage {
         driver.findElement(By.xpath(xpath)).click();
     }
 
-    public List<WebElement> getElementsListByXpath(String xpath) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
-        return driver.findElements(By.xpath(xpath));
-    }
-
     public String getElementInnerText(String xpath) {
         String innerText = driver.findElement(By.xpath(xpath)).getAttribute("innerText");
         return innerText;
     }
+
     public String getElementValue(String xpath) {
         String value = driver.findElement(By.xpath(xpath)).getAttribute("value");
         return value;
     }
+
     public String getElementPlaceHolder(String xpath) {
         String placeholder = driver.findElement(By.xpath(xpath)).getAttribute("placeholder");
         return placeholder;
@@ -48,6 +45,12 @@ public abstract class BasePage {
         String textContent = driver.findElement(By.xpath(xpath)).getAttribute("textContent");
         return textContent;
     }
+
+    public String getURL(String xpath) {
+        String URL = driver.findElement(By.xpath(xpath)).getAttribute("src");
+        return URL;
+    }
+
 
     public void sendKeyToField(String xpath, String key) {
         driver.findElement(By.xpath(xpath)).sendKeys(key);
