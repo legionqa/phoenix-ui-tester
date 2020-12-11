@@ -16,6 +16,7 @@ public class SharedDriver {
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
 //            options.addArguments("headless");
+//            options.addArguments("window-size=1800x900");
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
             driver.manage().window().maximize();

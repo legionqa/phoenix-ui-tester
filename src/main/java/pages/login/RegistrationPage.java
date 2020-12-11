@@ -1,10 +1,12 @@
-package pages;
+package pages.login;
 
-import org.openqa.selenium.WebElement;
+import pages.BasePage;
 import properties.PropertiesFile;
-import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class RegistrationPage extends BasePage {
+    public static final Logger logger = LogManager.getLogger(RegistrationPage.class);
 
     public static String REGISTRATION_PAGE_URL;
 
@@ -51,18 +53,12 @@ public class RegistrationPage extends BasePage {
     public final static String CHECK_DATA_TEXT1 = "//div[@class='toast-title']";
     public final static String CHECK_DATA_TEXT2 = "//div[@class='toast-message']";
 
-
     public final static String INVALID_EMAIL_SIGN = "//span[contains(@class,'glyphicon-remove')]//preceding-sibling::input[@type='email']";
     public final static String VALID_EMAIL_SIGN = "//span[contains(@class,'glyphicon-ok')]//preceding-sibling::input[@type='email']";
     public final static String INVALID_NAME_SIGN = "//span[contains(@class,'glyphicon-remove')]//preceding-sibling::input[@type='text']";
     public final static String VALID_NAME_SIGN = "//span[contains(@class,'glyphicon-ok')]//preceding-sibling::input[@type='text']";
 
-
-    public final static String NAME_ERROR_MESSAGE = "//*[@id='ember747']/span[2]";
-    public final static String CURRENCY_FIELD = "//*[@id='ember769']";
-
     public void navigateToRegistrationPage() {
-        PropertiesFile.readPropertiesFile();
         driver.get(REGISTRATION_PAGE_URL);
     }
 
