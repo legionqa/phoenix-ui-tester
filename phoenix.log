@@ -1,0 +1,38 @@
+2020-12-10 19:38:13.117 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 86.0.4240.22 (resolved driver for Chrome 86)
+2020-12-10 19:38:13.138 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win32\86.0.4240.22\chromedriver.exe
+2020-12-10 19:38:29.962 [main] INFO  pages.mySites.MySitesPage - Switch tooltip text is Inactivate step failed
+2020-12-10 19:38:30.085 [main] INFO  pages.mySites.MySitesPage - Actual tip is Выключить
+2020-12-10 19:38:35.740 [main] INFO  pages.mySites.MySitesPage - Switch tooltip text is Inactivate step failed
+2020-12-10 19:38:35.852 [main] INFO  pages.mySites.MySitesPage - Actual tip is Выключить
+2020-12-10 19:38:42.040 [main] INFO  pages.mySites.MySitesPage - Switch tooltip text is Activate step failed
+2020-12-10 19:38:42.151 [main] INFO  pages.mySites.MySitesPage - Actual tip is Включить
+2020-12-10 19:38:44.840 [main] INFO  pages.mySites.MySitesPage - Switch tooltip is ????? step failed
+2020-12-10 19:38:44.951 [main] INFO  pages.mySites.MySitesPage - Actual tip is Выключить
+2020-12-10 19:38:45.624 [main] INFO  pages.mySites.MySitesPage - Switch tooltip is ????? step failed
+2020-12-10 19:38:45.730 [main] INFO  pages.mySites.MySitesPage - Actual tip is Включить
+2020-12-10 19:38:49.699 [main] INFO  pages.mySites.MySitesPage - Switch tooltip is ????? step failed
+2020-12-10 19:38:49.809 [main] INFO  pages.mySites.MySitesPage - Actual tip is Выключить
+2020-12-10 19:38:50.924 [main] INFO  pages.mySites.MySitesPage - Switch tooltip is ????? step failed
+2020-12-10 19:38:51.024 [main] INFO  pages.mySites.MySitesPage - Actual tip is Включить
+2020-12-10 19:38:53.256 [main] INFO  pages.mySites.MySitesPage - Switch tooltip is ????? step failed
+2020-12-10 19:38:53.365 [main] INFO  pages.mySites.MySitesPage - Actual tip is Выключить
+2020-12-10 19:38:54.043 [main] INFO  pages.mySites.MySitesPage - Switch tooltip is ????? step failed
+2020-12-10 19:38:54.147 [main] INFO  pages.mySites.MySitesPage - Actual tip is Включить
+2020-12-10 19:38:56.219 [main] INFO  pages.mySites.MySitesPage - Pop-up message with ??????? text and OK button appears step failed
+2020-12-10 19:38:56.249 [main] INFO  pages.mySites.MySitesPage - Actual message is АктивацияВаш сайт был успешно активирован
+2020-12-10 19:38:57.108 [main] INFO  pages.mySites.MySitesPage - Pop-up warning with text ???????, ??????? and ??????? buttons appears step failed
+2020-12-10 19:38:57.135 [main] INFO  pages.mySites.MySitesPage - Actual message is Подтвердите ваше действиеВаш сайт станет не активным в системе
+2020-12-10 19:38:57.488 [main] INFO  pages.mySites.MySitesPage - Pop-up message with ??????? text and OK button appears step failed
+2020-12-10 19:38:57.516 [main] INFO  pages.mySites.MySitesPage - Actual message is ДеактивацияВаш сайт был успешно деактивирован
+2020-12-10 19:39:04.149 [main] INFO  pages.mySites.MySitesPage - Pop-up message with ??????? text and OK button appears step failed
+2020-12-10 19:39:04.182 [main] INFO  pages.mySites.MySitesPage - Actual message is АктивацияВаш сайт был успешно активирован
+2020-12-10 19:39:05.032 [main] INFO  pages.mySites.MySitesPage - Pop-up warning with text ???????, ??????? and ??????? buttons appears step failed
+2020-12-10 19:39:05.062 [main] INFO  pages.mySites.MySitesPage - Actual message is Подтвердите ваше действиеВаш сайт станет не активным в системе
+2020-12-10 19:39:05.750 [main] INFO  pages.mySites.MySitesPage - Pop-up message with ??????? text and OK button appears step failed
+2020-12-10 19:39:05.780 [main] INFO  pages.mySites.MySitesPage - Actual message is ДеактивацияВаш сайт был успешно деактивирован
+2020-12-10 19:39:08.145 [main] INFO  pages.mySites.MySitesPage - Pop-up message with ??????? text and OK button appears step failed
+2020-12-10 19:39:08.174 [main] INFO  pages.mySites.MySitesPage - Actual message is АктивацияВаш сайт был успешно активирован
+2020-12-10 19:39:09.012 [main] INFO  pages.mySites.MySitesPage - Pop-up warning with text ???????, ??????? and ??????? buttons appears step failed
+2020-12-10 19:39:09.047 [main] INFO  pages.mySites.MySitesPage - Actual message is Подтвердите ваше действиеВаш сайт станет не активным в системе
+2020-12-10 19:39:09.482 [main] INFO  pages.mySites.MySitesPage - Pop-up message with ??????? text and OK button appears step failed
+2020-12-10 19:39:09.511 [main] INFO  pages.mySites.MySitesPage - Actual message is ДеактивацияВаш сайт был успешно деактивирован

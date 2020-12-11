@@ -1,11 +1,11 @@
-package steps;
+package steps.login;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.ForgotPassPage;
-import pages.LoginPage;
+import pages.login.ForgotPassPage;
+import pages.login.LoginPage;
 
 import static org.junit.jupiter.api.Assertions.*;
 

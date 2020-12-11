@@ -1,11 +1,16 @@
-package pages;
+package pages.login;
 
+import pages.BasePage;
 import properties.PropertiesFile;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class LoginPage extends BasePage {
+    public static final Logger logger = LogManager.getLogger(LoginPage.class);
+
     public static String LOGIN_PAGE_URL;
     public static String MAIN_PAGE_URL;
-    public static String ROOT_URL;
+//    public static String ROOT_URL;
 
     public static String VALID_EMAIL;
     public static String VALID_PASSWORD;
@@ -32,7 +37,7 @@ public class LoginPage extends BasePage {
     public final static String LOGOUT_BUTTON = "//i[@class='fa-lg ember-view fa fa-sign-out']";
 
     public void navigateToLoginPage() {
-        PropertiesFile.readPropertiesFile();
+//        logger.info("Login page is open, page class");
         driver.get(LOGIN_PAGE_URL);
     }
 
@@ -57,7 +62,11 @@ public class LoginPage extends BasePage {
     }
 
     public void chooseLanguage(String language) {
-        clickElementByXpath(String.format(LANGUAGE_OPTION, language));
+        try {
+            clickElementByXpath(String.format(LANGUAGE_OPTION, language));
+        } catch (Exception e) {
+            logger.error(String.format("%s language option not found", language));
+        }
     }
 
     public boolean isGreetingTextDisplayed(String greeting) {

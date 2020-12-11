@@ -1,8 +1,12 @@
-package pages;
+package pages.login;
 
+import pages.BasePage;
 import properties.PropertiesFile;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ForgotPassPage extends BasePage {
+    public static final Logger logger = LogManager.getLogger(ForgotPassPage.class);
 
     public static String FORGOTPASSWORD_PAGE_URL;
     public static String VALID_EMAIL;
@@ -20,7 +24,6 @@ public class ForgotPassPage extends BasePage {
 
 
     public void navigateToForgotPassPage() {
-        PropertiesFile.readPropertiesFile();
         driver.get(FORGOTPASSWORD_PAGE_URL);
     }
 

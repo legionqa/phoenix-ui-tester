@@ -1,19 +1,17 @@
-package steps;
+package steps.login;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import pages.LoginPage;
-import pages.RegistrationPage;
+import pages.login.LoginPage;
+import pages.login.RegistrationPage;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PhoenixUIRegistrationPageTest {
-
     private RegistrationPage registrationPage;
-
 
     public PhoenixUIRegistrationPageTest() {
         registrationPage = new RegistrationPage();
