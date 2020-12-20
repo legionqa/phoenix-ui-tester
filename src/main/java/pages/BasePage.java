@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.login.LoginPage;
 
@@ -23,10 +24,19 @@ public abstract class BasePage {
     public static String ROOT_URL;
 
     public static final String SIDE_MENU = "//ul[@id='side-menu']";
-    public static final String NAVIGATION_BAR_SECTION = "//ol//a[text()]";
-    public static final String NAVIGATION_BAR_LAST_SECTION = "(//ol//a[text()])[last()]";
-    public static final String NAVIGATION_BAR_LINK = "//ol//a[text()='%s']";
+    public static final String NAVIGATION_BAR = "//ol";
+    public static final String NAVIGATION_BAR_SECTION = "(//ol/li)[%d]";
+    public static final String NAVIGATION_BAR_LINK = "//ol//*[text()='%s']";
 
+    public static final String BLOCK_HEADER = "//h5[text()='%s']";
+    public static final String BLOCK_BODY = "//h5[text()='%s']/ancestor::div/following-sibling::div[@class='ibox-content']";
+    public static final String COLLAPSE_BUTTON = "//h5[text()='%s']//following-sibling::div//i";
+    public static final String COLLAPSED_BLOCK = "display: none;";
+    public static final String EXPANDED_BLOCK = "display: block;";
+    public static final String CHEVRON_DOWN = "fa fa-chevron-down";
+    public static final String CHEVRON_UP = "fa fa-chevron-up";
+
+    public static final String CLOSE_MESSENGER_BUTTON = "//jdiv[@class='closeButton_684e']";
 
 
     public boolean isElementDisplayed(String xpath) {
@@ -39,7 +49,7 @@ public abstract class BasePage {
 
     public void clickElementByXpath(String xpath) {
         try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+            waitForElementVisibility(xpath);
         } catch (Exception e) {
             logger.error(String.format("Element with xpath %s not found", xpath));
         }
@@ -47,7 +57,7 @@ public abstract class BasePage {
     }
 
     public List<WebElement> getElementsListByXpath(String xpath) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        waitForElementVisibility(xpath);
         return driver.findElements(By.xpath(xpath));
     }
 
@@ -75,8 +85,20 @@ public abstract class BasePage {
         return driver.findElement(By.xpath(xpath)).getAttribute("title");
     }
 
+    public String getElementClass(String xpath) {
+        return driver.findElement(By.xpath(xpath)).getAttribute("class");
+    }
+
+    public String getElementStyle(String xpath) {
+        return driver.findElement(By.xpath(xpath)).getAttribute("style");
+    }
+
     public void sendKeyToField(String xpath, String key) {
         driver.findElement(By.xpath(xpath)).sendKeys(key);
+    }
+
+    public void clearFieldByXpath(String xpath) {
+        driver.findElement(By.xpath(xpath)).clear();
     }
 
     public String getCurrentPageUrl() {
@@ -84,7 +106,7 @@ public abstract class BasePage {
     }
 
     public String waitAndGetCurrentPageUrl(String page) {
-        wait.until(ExpectedConditions.urlContains(page));
+        wait.until(ExpectedConditions.urlToBe(page));
         return driver.getCurrentUrl();
     }
 
@@ -98,34 +120,51 @@ public abstract class BasePage {
         }
     }
 
-    public void loginToDashboard() {
+    public void loginToDashboard(String email, String password) {
         driver.get(LoginPage.LOGIN_PAGE_URL);
         clickElementByXpath(LoginPage.CHANGE_LANGUAGE_BUTTON);
         clickElementByXpath(String.format(LoginPage.LANGUAGE_OPTION, "English"));
-        sendKeyToField(LoginPage.EMAIL_FIELD, LoginPage.VALID_EMAIL);
-        sendKeyToField(LoginPage.PASSWORD_FIELD, LoginPage.VALID_PASSWORD);
+        sendKeyToField(LoginPage.EMAIL_FIELD, email);
+        sendKeyToField(LoginPage.PASSWORD_FIELD, password);
         clickElementByXpath(LoginPage.LOGIN_BUTTON);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SIDE_MENU)));
+        waitForElementVisibility(SIDE_MENU);
     }
 
-    public String getNavigationBarText(String lastSection) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(String.format(NAVIGATION_BAR_LINK, lastSection))));
-        List<WebElement> elements;
-        elements = getElementsListByXpath(NAVIGATION_BAR_SECTION);
-        String barText = "";
-        for (WebElement element:elements) {
-            barText += (element.getText());
-        }
-        return barText;
+    public String getNavigationBarText(int number) {
+        waitForElementVisibility(String.format(NAVIGATION_BAR_SECTION, number));
+        return getElementInnerText(NAVIGATION_BAR);
     }
 
-    public String getNavigationBarPageName() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NAVIGATION_BAR_LAST_SECTION)));
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return getElementText(NAVIGATION_BAR_LAST_SECTION);
+    public void waitForElementVisibility(String xpath) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+    }
+
+    public void waitForElementPresence(String xpath) {
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+    }
+
+    public void clickCollapseButton(String blockHeader) {
+        clickElementByXpath(String.format(COLLAPSE_BUTTON, blockHeader));
+    }
+
+    public boolean isBlockCollapsed(String header) {
+        return (isElementDisplayed(String.format(BLOCK_HEADER, header))
+                && (getElementStyle(String.format(BLOCK_BODY, header)).equals(COLLAPSED_BLOCK))
+                && (getElementClass(String.format(COLLAPSE_BUTTON, header)).equals(CHEVRON_DOWN)));
+    }
+
+    public boolean isBlockExpanded(String header) {
+        return (isElementDisplayed(String.format(BLOCK_HEADER, header))
+                && (getElementStyle(String.format(BLOCK_BODY, header)).equals(EXPANDED_BLOCK))
+                && (getElementClass(String.format(COLLAPSE_BUTTON, header)).equals(CHEVRON_UP)));
+    }
+
+    public String getSelectedOption(String xpath) {
+        Select select = new Select(driver.findElement(By.xpath(xpath)));
+        return select.getFirstSelectedOption().getText();
+    }
+
+    public void closeMessenger() {
+        clickElementByXpath(CLOSE_MESSENGER_BUTTON);
     }
 }

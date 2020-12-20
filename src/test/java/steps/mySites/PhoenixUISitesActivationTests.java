@@ -1,7 +1,6 @@
 package steps.mySites;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.mySites.MySitesPage;
@@ -9,6 +8,7 @@ import pages.mySites.MySitesPage;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static pages.mySites.MySitesPage.TEST_SITE_1_NAME;
 
 public class PhoenixUISitesActivationTests {
     private MySitesPage mySitesPage;
@@ -40,30 +40,27 @@ public class PhoenixUISitesActivationTests {
     }
 
     @And("Activate-inactivate switch in Test site SearchKey1 line is on")
-    public void activateSwitchIsOn() {
-        assertTrue(mySitesPage.activateSwitchIsOn());
+    public void activationSwitchIsOn() {
+        assertTrue(mySitesPage.isActivationSwitchOn(TEST_SITE_1_NAME));
     }
 
     @And("Switch tooltip text is Inactivate")
     public void switchTooltipTextIsInactivate() {
         try {
-            assertEquals(mySitesPage.INACTIVATE_TIP, mySitesPage.getActivateSwitchTip());
+            assertEquals(mySitesPage.INACTIVATE_TIP, mySitesPage.getActivationSwitchTip(mySitesPage.TEST_SITE_1_NAME));
         } catch (AssertionError error) {
             errors.add(error);
-            mySitesPage.logger.info("Switch tooltip text is Inactivate step failed");
-            mySitesPage.logger.info(String.format("Actual tip is %s", mySitesPage.getActivateSwitchTip()));
+            mySitesPage.logger.info(error.getMessage());
         }
     }
 
     @Then("Switch tooltip is {string}")
     public void switchTooltipIs(String tip) {
         try {
-            assertEquals(tip, mySitesPage.getActivateSwitchTip());
+            assertEquals(tip, mySitesPage.getActivationSwitchTip(mySitesPage.TEST_SITE_1_NAME));
         } catch (AssertionError error) {
             errors.add(error);
-            mySitesPage.logger.info(String.format("Switch tooltip is %s step failed", tip));
-            mySitesPage.logger.info(String.format("Actual tip is %s", mySitesPage.getActivateSwitchTip()));
-
+            mySitesPage.logger.info(error.getMessage());
         }
     }
 
@@ -104,18 +101,17 @@ public class PhoenixUISitesActivationTests {
     }
 
     @And("Activate-inactivate switch in Test site SearchKey1 line is off")
-    public void activateSwitchIsOff() {
-        assertTrue(mySitesPage.activateSwitchIsOff());
+    public void activationSwitchIsOff() {
+        assertTrue(mySitesPage.isActivationSwitchOff(TEST_SITE_1_NAME));
     }
 
     @And("Switch tooltip text is Activate")
     public void switchTooltipTextIsActivate() {
         try {
-            assertEquals(mySitesPage.ACTIVATE_TIP, mySitesPage.getActivateSwitchTip());
+            assertEquals(mySitesPage.ACTIVATE_TIP, mySitesPage.getActivationSwitchTip(mySitesPage.TEST_SITE_1_NAME));
         } catch (AssertionError error) {
             errors.add(error);
-            mySitesPage.logger.info("Switch tooltip text is Activate step failed");
-            mySitesPage.logger.info(String.format("Actual tip is %s", mySitesPage.getActivateSwitchTip()));
+            mySitesPage.logger.info(error.getMessage());
         }
     }
 
@@ -126,8 +122,7 @@ public class PhoenixUISitesActivationTests {
         assertEquals(button, mySitesPage.getActivationMessageOkButtonText());
         } catch (AssertionError error) {
             errors.add(error);
-            mySitesPage.logger.info(String.format("Pop-up message with %s text and %s button appears step failed", text, button));
-            mySitesPage.logger.info(String.format("Actual message is %s", mySitesPage.getActivationMessageText()));
+            mySitesPage.logger.info(error.getMessage());
         }
     }
 
@@ -139,9 +134,7 @@ public class PhoenixUISitesActivationTests {
             assertEquals(go, mySitesPage.getActivationMessageOkButtonText());
         } catch (AssertionError error) {
             errors.add(error);
-            mySitesPage.logger.info(String.format("Pop-up warning with text %s, %s and %s buttons appears step failed", text, cancel, go));
-            mySitesPage.logger.info(String.format("Actual message is %s", mySitesPage.getActivationMessageText()));
-
+            mySitesPage.logger.info(error.getMessage());
         }
     }
 
