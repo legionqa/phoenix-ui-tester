@@ -59,9 +59,6 @@ public class ProfilePage extends BasePage {
     public boolean isEmailFieldDisplayed() {
         return isElementDisplayed(MAIL_FIELD);
     }
-    public boolean isSkypeFieldDisplayed(){
-        return isElementDisplayed(SKYPE_FIELD);
-    }
 
     public boolean isCurrencyFieldDisplayed() {
         return isElementDisplayed(CURRENCY_FIELD);

@@ -1,6 +1,7 @@
 package pages.mySites;
 
-import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,8 +13,13 @@ public class MySitesPage extends BasePage {
     public static String CREATE_SITE_PAGE_URL;
 
     public static final String SITES_HEADER = "//h5";
+    public static final String NAVIGATION_BAR_LINK = "//ol//a[text()='%s']";
+    //    public static final String NAVIGATION_BAR_SITES = "//ol//a[text()='Sites']";
+//    public static final String NAVIGATION_BAR_SECTION = "//ol//a[text()]";
+    public static final String PAGE_NAME = "Sites";
     public static final String SIDE_OPTION_NAME = "My sites";
     public static final String COUNTER_DIVIDER = ": ";
+    public static final String NAVIGATION_BAR_TEXT = "DASHBOARDLEGION QASITES";
     public static final String ALL_SITES = "//div[@class='m-t-md']/strong";
     public static final String TABLE_LINE = "//tr";
     public static final String SIDE_MENU_SELECTED = "//ul//a[@class='ember-view active']";
@@ -24,30 +30,25 @@ public class MySitesPage extends BasePage {
     public static final String SEARCH_FIELD = "//input";
     public static final String SEARCH_BUTTON = "//div[@class='input-group']//button";
 
-    public static final String SITE_LINE_NAME = "//tr/td/a[text()='%s']";
     public static final String TEST_SITE_1_NAME = "Test site SearchKey1";
     public static final String TEST_SITE_1_URL = "/users/5fa1d8ffc903de27cc069de4/sites/5fc6647437cb05dfbd15edb4";
     public static final String TEST_SITE_1_CREATE_WIGET_URL = "/users/5fa1d8ffc903de27cc069de4/sites/5fc6647437cb05dfbd15edb4/widgets/create";
     public static final String TEST_SITE_1_SETTINGS_URL = "/users/5fa1d8ffc903de27cc069de4/sites/5fc6647437cb05dfbd15edb4/edit";
     public static final String TEST_SITE_2_NAME = "Test site searchkey2";
-    public static final String TEST_SITE_2_URL = "http://test2.test";
 
     public static final String INACTIVATE_TIP = "Inactivate";
     public static final String ACTIVATE_TIP = "Activate";
 
-    public static final String SEARCH_KEY_1 = "Searchkey";
-    public static final String SEARCH_KEY_2 = "qwerty";
-
-    public static final String ACTIVATE_SWITCH = "(//tr)[%d]//i[contains(@class, 'fa-toggle')]";
-    public static final String ACTIVATE_SWITCH_ON = "(//tr)[%d]//i[contains(@class, 'fa-toggle-on')]";
-    public static final String ACTIVATE_SWITCH_OFF = "(//tr)[%d]//i[contains(@class, 'fa-toggle-off')]";
-    public static final String ACTIVATE_SWITCH_TIP = "(//tr)[%d]//i[contains(@class, 'fa-toggle')]/ancestor::a";
-    public static final String SITE_NAME = "(//tr)[%d]/td[@class='project-title']/a[@href]";
-    public static final String SITE_URL = "(//tr)[%d]//small[contains(text(), 'http://')]";
-    //    public static final String ADD_WIDGET_BUTTON = "(//tr)[%d]//a[text()='Add the widget']";
-    public static final String ADD_WIDGET_BUTTON = "(//tr)[%d]//a[contains(@href, '/widgets/create')]";
-    //    public static final String SETTINGS_BUTTON = "(//tr)[%d]//a[@title='Settings']";
-    public static final String SETTINGS_BUTTON = "(//tr)[%d]//a[contains(@href, '/edit')]";
+    public static final String ACTIVATE_SWITCH = "//tr[%d]//i[contains(@class, 'fa-toggle')]";
+    public static final String ACTIVATE_SWITCH_ON = "//tr[%d]//i[contains(@class, 'fa-toggle-on')]";
+    public static final String ACTIVATE_SWITCH_OFF = "//tr[%d]//i[contains(@class, 'fa-toggle-off')]";
+    public static final String ACTIVATE_SWITCH_TIP = "//tr[%d]//i[contains(@class, 'fa-toggle')]/ancestor::a";
+    public static final String SITE_NAME = "//tr[%d]/td[@class='project-title']/a[@href]";
+    public static final String SITE_URL = "//tr[%d]//small[contains(text(), 'http://')]";
+    public static final String ADD_WIDGET_BUTTON = "//tr[%d]//a[text()='Add the widget']";
+    public static final String ADD_WIDGET_BUTTON_TEXT = "//tr[%d]//a[contains(@href, '/widgets/create')]";
+    public static final String SETTINGS_BUTTON = "//tr[%d]//a[@title='Settings']";
+    public static final String SETTINGS_BUTTON_TIP = "//tr[%d]//a[contains(@href, '/edit')]";
 
     public static final String ACTIVATION_MESSAGE = "//div[@class='sa-icon sa-warning']//following::div[@class='sa-icon sa-success animate']";
     public static final String INACTIVATION_MESSAGE = "//div[@class='sa-icon sa-warning pulseWarning']//following::div[@class='sa-icon sa-success animate']";
@@ -58,8 +59,15 @@ public class MySitesPage extends BasePage {
     public static final String ACTIVATION_MESSAGE_TEXT1 = "//div[contains(@class, 'visible')]/h2";
     public static final String ACTIVATION_MESSAGE_TEXT2 = "//div[contains(@class, 'visible')]/p";
 
+    public static final String TEST_SITE_1_HEADER = "//h5[text()='Test site SearchKey1']";
+
     public void navigateToMySitesPage() {
+//        logger.info("Login page is open, page class");
         driver.get(MY_SITES_PAGE_URL);
+    }
+
+    public boolean isSitesHeaderVisible() {
+        return isElementDisplayed(SITES_HEADER);
     }
 
     public void clickNavigationLink(String link) {
@@ -79,11 +87,7 @@ public class MySitesPage extends BasePage {
     }
 
     public int getLinesNumber() {
-        try {
-            return getElementsListByXpath(TABLE_LINE).size();
-        } catch (TimeoutException e) {
-            return 0;
-        }
+        return getElementsListByXpath(TABLE_LINE).size();
     }
 
     public String getSideMenuOption() {
@@ -123,48 +127,53 @@ public class MySitesPage extends BasePage {
     }
 
     public boolean isActivateSwitchDisplayed() {
-        for (int i = 1; i <= getLinesNumber(); i++) {
+        boolean isVisible = true;
+        for (int i = 1; i <= 4; i++) {
             if (!isElementDisplayed(String.format(ACTIVATE_SWITCH, i))) {
-                return false;
+                isVisible = false;
             }
         }
-        return true;
+        return isVisible;
     }
 
     public boolean isSiteNameDisplayed() {
+        boolean isVisible = true;
         for (int i = 1; i <= getLinesNumber(); i++) {
             if (!isElementDisplayed(String.format(SITE_NAME, i))) {
-                return false;
+                isVisible = false;
             }
         }
-        return true;
+        return isVisible;
     }
 
     public boolean isSiteUrlDisplayed() {
+        boolean isVisible = true;
         for (int i = 1; i <= getLinesNumber(); i++) {
             if (!isElementDisplayed(String.format(SITE_URL, i))) {
-                return false;
+                isVisible = false;
             }
         }
-        return true;
+        return isVisible;
     }
 
     public boolean isAddWidgetButtonDisplayed() {
+        boolean isVisible = true;
         for (int i = 1; i <= getLinesNumber(); i++) {
             if (!isElementDisplayed(String.format(ADD_WIDGET_BUTTON, i))) {
-                return false;
+                isVisible = false;
             }
         }
-        return true;
+        return isVisible;
     }
 
     public boolean isSettingsButtonDisplayed() {
+        boolean isVisible = true;
         for (int i = 1; i <= getLinesNumber(); i++) {
             if (!isElementDisplayed(String.format(SETTINGS_BUTTON, i))) {
-                return false;
+                isVisible = false;
             }
         }
-        return true;
+        return isVisible;
     }
 
     public int getSiteLineNumberByName(String name) {
@@ -197,7 +206,7 @@ public class MySitesPage extends BasePage {
     }
 
     public void waitForMessage() {
-        waitForElementVisibility(MESSAGE);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(MESSAGE)));
     }
 
     public void clickWarningCancelButton() {
@@ -217,11 +226,11 @@ public class MySitesPage extends BasePage {
     }
 
     public String getAddWidgetButtonText() {
-        return getElementText(String.format(ADD_WIDGET_BUTTON, getSiteLineNumberByName(TEST_SITE_1_NAME)));
+        return getElementText(String.format(ADD_WIDGET_BUTTON_TEXT, getSiteLineNumberByName(TEST_SITE_1_NAME)));
     }
 
     public String getSettingsButtonTip() {
-        return getElementTitle(String.format(SETTINGS_BUTTON, getSiteLineNumberByName(TEST_SITE_1_NAME)));
+        return getElementTitle(String.format(SETTINGS_BUTTON_TIP, getSiteLineNumberByName(TEST_SITE_1_NAME)));
     }
 
     public void clickTest1SiteName() {
@@ -246,18 +255,6 @@ public class MySitesPage extends BasePage {
 
     public String getActivationMessageCancelButtonText() {
         return getElementText(WARNING_CANCEL_BUTTON);
-    }
-
-    public boolean areSitesFound() {
-        return (isElementDisplayed(String.format(SITE_LINE_NAME, TEST_SITE_1_NAME)) && isElementDisplayed(String.format(SITE_LINE_NAME, TEST_SITE_2_NAME)));
-    }
-
-    public void clickUpdateButton() {
-        clickElementByXpath(UPDATE_BUTTON);
-    }
-
-    public String getSiteUrlBySiteName(String name) {
-        return getElementText(String.format(SITE_URL, getSiteLineNumberByName(name)));
     }
 
 }

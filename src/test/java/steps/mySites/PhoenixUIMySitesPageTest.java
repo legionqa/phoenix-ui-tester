@@ -138,17 +138,17 @@ public class PhoenixUIMySitesPageTest {
 
     @When("User clicks Settings button of the Test site SearchKey1 line")
     public void userClicksTest1SiteSettingsButton() {
-        mySitesPage.clickTest1SiteSettingsButton();
+        mySitesPage.clickSiteSettingsButton(mySitesPage.TEST_SITE_1_NAME);
     }
 
     @Then("Site page of the Test site SearchKey1 site opens")
     public void test1SitePageOpens() {
-        assertEquals(mySitesPage.ROOT_URL.concat(mySitesPage.TEST_SITE_1_URL), mySitesPage.waitAndGetCurrentPageUrl(mySitesPage.ROOT_URL.concat(mySitesPage.TEST_SITE_1_URL)));
+        assertEquals(mySitesPage.ROOT_URL.concat(mySitesPage.TEST_SITE_1_PAGE_URL), mySitesPage.waitAndGetCurrentPageUrl(mySitesPage.ROOT_URL.concat(mySitesPage.TEST_SITE_1_PAGE_URL)));
     }
 
     @Then("Create the widget page of the Test site SearchKey1 site opens")
     public void test1SiteCreateWidgetPageOpens() {
-        assertEquals(mySitesPage.ROOT_URL.concat(mySitesPage.TEST_SITE_1_CREATE_WIGET_URL), mySitesPage.waitAndGetCurrentPageUrl(mySitesPage.ROOT_URL.concat(mySitesPage.TEST_SITE_1_CREATE_WIGET_URL)));
+        assertEquals(mySitesPage.ROOT_URL.concat(mySitesPage.TEST_SITE_1_CREATE_WIDGET_URL), mySitesPage.waitAndGetCurrentPageUrl(mySitesPage.ROOT_URL.concat(mySitesPage.TEST_SITE_1_CREATE_WIDGET_URL)));
     }
 
     @Then("Settings page of the Test site SearchKey1 site opens")
