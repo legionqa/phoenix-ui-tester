@@ -1,5 +1,5 @@
 @login @switch
-Feature: Visibility, languages and links
+Feature: Sites activation/inactivation
 
   Background:
     Given User navigates to My sites page
