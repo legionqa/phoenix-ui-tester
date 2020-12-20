@@ -1,13 +1,23 @@
 @login
-Feature: Visibility, languages and links
+Feature: My sites page
 
   Background:
     Given User navigates to My sites page
 
 # Visibility, languages and links
 
-  Scenario: Navigation bar - page name
-    Then The Navigation bar text is DASHBOARD LEGION QA SITES
+  Scenario Outline: Navigation bar language
+    When User clicks Change language button - My sites
+    And User chooses "<language>" language
+    Then The navigation bar text in 3 sections is "<text>"
+
+    Examples:
+      | language | text |
+      | English | DASHBOARD  LEGION QA  SITES |
+      | Русский | DASHBOARD  LEGION QA  САЙТЫ |
+      | Українська | DASHBOARD  LEGION QA  САЙТИ |
+      | Portuguesa | DASHBOARD  LEGION QA  SITES |
+
 
   Scenario Outline: Navigation bar - links
     When User clicks "<link>" link of the Navigation bar
@@ -45,18 +55,6 @@ Feature: Visibility, languages and links
       | Українська | Сайти | Оновити | Ім'я сайту | Пошук | Всього сайтів | Додати сайт |
       | Portuguesa | Sites | Atualizar | Nome do site | Pesquisa | Todos os sites | Adicionar o site |
 
-  Scenario Outline: Navigation bar language
-    When User clicks Change language button - My sites
-    And User chooses "<language>" language
-    Then The last section of the Navigation bar is "<sites>"
-
-    Examples:
-      | language | sites |
-      | English | SITES |
-      | Русский | САЙТЫ |
-      | Українська | САЙТИ |
-      | Portuguesa | SITES |
-
 
 #  Sites table
 
@@ -92,19 +90,32 @@ Feature: Visibility, languages and links
       | Українська | Додати віджет | Налаштування |
       | Portuguesa | Adicionar o widget | Configurações |
 
+#   Search test
 
-  Scenario: Search test - valid key
+  Scenario Outline: Search test - valid key
     When User types Searchkey in the Search field
     Then The sites table with two sites Test site SearchKey1 and Test site searchkey2 only is displayed
-    And All sites counter number is 2
+    And All sites counter number is <number>
 
-  Scenario: Search test - invalid key
+    Examples:
+      | number |
+      | 2 |
+
+  Scenario Outline: Search test - invalid key
     When User types qwerty in the Search field
-    Then The sites table with two sites Test site SearchKey1 and Test site searchkey2 only is displayed
-    And All sites counter number is 0
+    Then The sites table with <number> sites is displayed
+    And All sites counter number is <number>
 
-  Scenario: Update button test
+    Examples:
+      | number |
+      | 0 |
+
+  Scenario Outline: Update button test
     When User types Searchkey in the Search field
     When User clicks Update button
-    Then The sites table with four sites is displayed
-    And All sites counter number is 4
+    Then The sites table with <number> sites is displayed
+    And All sites counter number is <number>
+
+    Examples:
+      | number |
+      | 4 |

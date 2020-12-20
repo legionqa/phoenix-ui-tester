@@ -20,7 +20,7 @@ public class Hooks {
         if (!loggedIn) {
             loginPage = new LoginPage();
             PropertiesFile.readPropertiesFile();
-            loginPage.loginToDashboard();
+            loginPage.loginToDashboard(LoginPage.VALID_EMAIL, LoginPage.VALID_PASSWORD);
             loggedIn = true;
         }
     }

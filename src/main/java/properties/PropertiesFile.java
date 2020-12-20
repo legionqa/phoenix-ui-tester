@@ -5,6 +5,7 @@ import pages.login.ForgotPassPage;
 import pages.login.LoginPage;
 import pages.mySites.MySitesPage;
 import pages.login.RegistrationPage;
+import pages.profile.ProfilePage;
 
 import java.io.*;
 import java.util.Properties;
@@ -28,6 +29,14 @@ public class PropertiesFile {
 
             MySitesPage.MY_SITES_PAGE_URL = prop.getProperty("RootUrl").concat(String.format(prop.getProperty("MySitesUrl"), prop.getProperty("LegionID")));
             MySitesPage.CREATE_SITE_PAGE_URL = prop.getProperty("RootUrl").concat(String.format(prop.getProperty("CreateSiteUrl"), prop.getProperty("LegionID")));
+
+            ProfilePage.PROFILE_PAGE_URL = prop.getProperty("RootUrl").concat(String.format(prop.getProperty("ProfileUrl"), prop.getProperty("LegionID")));
+            ProfilePage.PROFILE_PAGE_URL_NEW_USER = prop.getProperty("RootUrl").concat(String.format(prop.getProperty("ProfileUrl"), prop.getProperty("TestUserID")));
+            ProfilePage.TEST_USER_MAIL =prop.getProperty("TestUserMail");
+            ProfilePage.TEST_USER_PASSWORD=prop.getProperty("TestUserPassword");
+            ProfilePage.TEST_USER_NEW_PASSWORD =prop.getProperty("TestUserNewPassword");
+            ProfilePage.TEST_USER_NEW_MAIL =prop.getProperty("TestUserNewMail");
+
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -7,9 +7,6 @@ import io.cucumber.java.en.When;
 import pages.login.LoginPage;
 import pages.mySites.MySitesPage;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -25,11 +22,6 @@ public class PhoenixUIMySitesPageTest {
         mySitesPage.navigateToMySitesPage();
     }
 
-    @Then("The Navigation bar text is DASHBOARD LEGION QA SITES")
-    public void navigationBarText() {
-        assertEquals(mySitesPage.NAVIGATION_BAR_TEXT, mySitesPage.getNavigationBarText(mySitesPage.PAGE_NAME));
-    }
-
     @When("User clicks {string} link of the Navigation bar")
     public void navigationBarLink(String link) {
         mySitesPage.clickNavigationLink(link);
@@ -37,7 +29,7 @@ public class PhoenixUIMySitesPageTest {
 
     @Then("{string} page opens - My sites")
     public void pageOpensMySites(String page) {
-        assertEquals(LoginPage.ROOT_URL.concat(page), mySitesPage.getCurrentPageUrl());
+        assertEquals(LoginPage.ROOT_URL.concat(page), mySitesPage.waitAndGetCurrentPageUrl(LoginPage.ROOT_URL.concat(page)));
     }
 
     @Then("The number in All sites counter equals to the number of strings in the Sites table")
@@ -100,11 +92,11 @@ public class PhoenixUIMySitesPageTest {
         assertEquals(text, mySitesPage.getAddSiteButtonText());
     }
 
-    @Then("The last section of the Navigation bar is {string}")
-    public void navigationBarPageNameIs(String name) {
+    @Then("The navigation bar text in {int} sections is {string}")
+    public void navigationBarTextIs(int number, String text) {
 //        mySitesPage.clickElementByXpath("//a[@href='/contacts']");
 //        mySitesPage.clickElementByXpath("//a[contains(@href, '/sites')]");
-        assertEquals(name, mySitesPage.getNavigationBarPageName());
+        assertEquals(text, mySitesPage.getNavigationBarText(number));
     }
 
     @Then("Every site line has activate-inactivate switch")
@@ -176,25 +168,32 @@ public class PhoenixUIMySitesPageTest {
 
     @When("User types Searchkey in the Search field")
     public void userTypesSearchkeyInTheSearchField() {
+        mySitesPage.sendKeyToField(mySitesPage.SEARCH_FIELD, mySitesPage.SEARCH_KEY_1);
     }
 
-    @Then("The sites table with two sites Test site SearchKey{int} and Test site searchkey{int} only is displayed")
-    public void theSitesTableWithTwoSitesTestSiteSearchKeyAndTestSiteSearchkeyOnlyIsDisplayed(int arg0, int arg1) {
+    @Then("The sites table with two sites Test site SearchKey1 and Test site searchkey2 only is displayed")
+    public void areSitesFound() {
+        assertTrue(mySitesPage.areSitesFound());
     }
 
     @And("All sites counter number is {int}")
-    public void allSitesCounterNumberIs(int arg0) {
+    public void allSitesCounterNumberIs(int number) {
+        assertEquals(number, mySitesPage.getAllSitesNumber());
     }
+
 
     @When("User types qwerty in the Search field")
     public void userTypesQwertyInTheSearchField() {
+        mySitesPage.sendKeyToField(mySitesPage.SEARCH_FIELD, mySitesPage.SEARCH_KEY_2);
     }
 
     @When("User clicks Update button")
     public void userClicksUpdateButton() {
+        mySitesPage.clickUpdateButton();
     }
 
-    @Then("The sites table with four sites is displayed")
-    public void theSitesTableWithFourSitesIsDisplayed() {
+    @Then("The sites table with {int} sites is displayed")
+    public void theSitesTableWithFourSitesIsDisplayed(int number) {
+        assertEquals(number, mySitesPage.getLinesNumber());
     }
 }
