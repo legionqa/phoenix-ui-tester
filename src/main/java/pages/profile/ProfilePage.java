@@ -176,6 +176,9 @@ public class ProfilePage extends BasePage {
         clearFieldByXpath(SKYPE_FIELD);
         sendKeyToField(SKYPE_FIELD, text);
     }
+    public boolean isSkypeFieldDisplayed(){
+        return isElementDisplayed(SKYPE_FIELD);
+    }
 
     public void clickSaveButton() {
         clickElementByXpath(SAVE_BUTTON);

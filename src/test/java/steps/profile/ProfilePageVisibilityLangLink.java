@@ -26,7 +26,7 @@ public class ProfilePageVisibilityLangLink {
     public void eMailFieldIsVisible() {
         assertTrue(profile.isEmailFieldDisplayed());
     }
-    @And("Skype field is visible")
+    @And("Skype field is visible - Profile page")
     public void skypeFieldIsVisible() {
         assertTrue(profile.isSkypeFieldDisplayed());
     }
@@ -82,7 +82,7 @@ public class ProfilePageVisibilityLangLink {
     public void passwordConfirmationPlaceholderIs(String text) {
         assertEquals(text, profile.getPasswordConfirmationPlaceHolder(text));
     }
-    @And("Save button text is {string}")
+    @And("Save button text is {string} - Profile page")
     public void saveButtonTextIs(String text) {
         assertEquals(text, profile.getSaveButtonText());
     }

@@ -6,7 +6,7 @@ Feature: Visibility, languages and links - Profile page
 
   Scenario: Verify elements visibility - Profile page
     Then E-mail field is visible
-    And Skype field is visible
+    And Skype field is visible - Profile page
     And Currency field is visible
 
 
@@ -51,7 +51,7 @@ Feature: Visibility, languages and links - Profile page
     Then Current password placeholder is "<current_password>"
     And New password placeholder is "<new_password>"
     And Password confirmation placeholder is "<password_confirmation>"
-    And Save button text is "<save_button>"
+    And Save button text is "<save_button>" - Profile page
     When User sends string " " in the name field
     Then Cancel button text is "<cancel_button>"
     And Change button text is "<change_button>"
