@@ -38,7 +38,6 @@ Feature: Negative tests
       | skype                   | Jane Doe     |
 
   Scenario: Verify invalid Current password
-
     When User changing the password block unwrapping
     And User type invalid password qqq in the field Current password
     And Type in New Password and Password confirmation fields same text data qwe123

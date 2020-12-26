@@ -80,7 +80,7 @@ public class MySitesPage extends BasePage {
     public int getLinesNumber() {
         try {
             return getElementsListByXpath(TABLE_LINE).size();
-        } catch (TimeoutException e) {
+        } catch (Exception e) {
             return 0;
         }
     }

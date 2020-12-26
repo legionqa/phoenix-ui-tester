@@ -60,82 +60,102 @@ public class ProfilePositiveTest extends BasePage {
     public void dataUserPanelContainsNewMail(String text){
         assertTrue(profile.getEmailFromUserPanel().contains(text));
     }
+
     @When("User send {string} in the Phone number field")
-    public void userSendNumberInPhoneField(){
-        profile.sendNumberInPhoneField("030003333378910");
+    public void userSendNumberInPhoneField(String number){
+        profile.sendNumberInPhoneField(number);
     }
+
     @And("User send {string} in the Skype number field")
     public void userSendNewNameInSkypeField(String name){
-        profile.sendNameInSkypeField("Ivan Ivanov");
+        profile.sendNameInSkypeField(name);
     }
+
     @And ("click on button Save")
      public void userClickButtonSave(){
         profile.clickSaveButton();
     }
+
     @When("Success message is displayed")
     public void successMessageIsDisplayed(){
         assertTrue(profile.successMessageIsVisible());
     }
+
     @And ("Return all the data to its original: tel '4578974' and Skype 'Legion QA'")
     public void returnDataPhoneAndSkypeToItsOriginal(){
         profile.returnPhoneAndSkypeToOriginal();
     }
+
     @When ("User send 'was@ist.das' in the mail field")
     public void userSendNewMailInMailField(){
         profile.typeNewDataInMailField("was@ist.das");
     }
+
     @And("Click cancel button")
     public void clickCancelButton(){
         profile.clickCancel();
     }
+
     @Then("Verify that 'legion.qaservices@gmail.com' is displayed in mail field")
     public void verifyDisplayedMailAddress(){
         assertEquals("legion.qaservices@gmail.com", profile.getMailFieldText());
     }
+
     @When ("User type valid data {string} in the mail field")
     public void enteringTextToMailField(String mail){
         profile.typeNewDataInMailField(mail);
     }
+
     @Then ("Valid sign in the e-mail field are displayed")
     public void validSignInMailFieldIsDisplayed(){
         assertTrue(profile.isValidSignInMailFIELDDisplayed());
     }
+
     @When("User type valid data {string} in the name field")
     public void enteringTextToNameField(String name){
         profile.typeNewDataInNameField(name);
     }
+
     @Then("Valid sign in the name field is displayed")
     public void validSignInNameFieldDisplayed(){
         assertTrue(profile.isValidSignInNameFieldDisplayed());
     }
-    @And("User login with test email and password legionqa.test@gmail.com : legiongq123")
+
+    @And("User login with test email and password legionqa.test@gmail.com : password1")
     public void userLoginWithTestEmail(){
         profile.loginWithTestEmail();
     }
+
     @And ("User go to new Profile page")
     public void userGoToNewProfilePage(){
         profile.goToProfilePageNewUser();
     }
+
     @And("User sends current password in the Current password field")
     public void inputCurrentPasswordInCurrentPasswordField(){
         profile.sendPasswordInCurrentField(TEST_USER_PASSWORD);
     }
-    @And("qwert123 in New password and Password confirmation fields")
+
+    @And("password2 in New password and Password confirmation fields")
     public void sendStringInNewPasswordAndConfirmationFields(){
         profile.sendStringInNewPasswordAndConfirmationFields(TEST_USER_NEW_PASSWORD);
     }
+
     @And("Clicks Change button")
     public void clickChangeButton(){
         profile.clickChangeButton();
     }
+
     @Then("success message is displayed")
     public void changePasswordSuccessMassageDisplayed(){
         assertTrue(profile.changePasswordSuccessMassageDisplayed());
     }
+
     @And("Return all the data to its original")
     public void returnOldPassword(){
         profile.returnPasswordToOriginal();
     }
+
     @And("User sends test.test@gm.com in the mail field")
     public void changeMailToNewTestMail(){
         profile.changeMailToNewTestMail();
@@ -144,7 +164,7 @@ public class ProfilePositiveTest extends BasePage {
     public void userClicksLogOutButton(){
         profile.clickElementWithJS();
     }
-    @And ("User login with new test email and password test.test@gm.com : legiongq123")
+    @And ("User login with new test email and password test.test@gm.com : password1")
     public void loginWithNewTestMailAndOldsPassword(){
         profile.loginWithNewTestMail();
     }
@@ -156,10 +176,6 @@ public class ProfilePositiveTest extends BasePage {
     public void changeMailToMailTestUser(){
         profile.changeMailToTestMail();
     }
-
-
-
-
 
 }
 
