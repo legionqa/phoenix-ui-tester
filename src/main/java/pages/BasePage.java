@@ -40,19 +40,13 @@ public abstract class BasePage {
 
 
     public boolean isElementDisplayed(String xpath) {
+        waitForElementVisibility(xpath);
         List<WebElement> webElementList = driver.findElements(By.xpath(xpath));
-//        if (webElementList.size() == 0) {
-//            logger.error(String.format("Element with xpath %s not found", xpath));
-//        }
         return webElementList.size() > 0;
     }
 
     public void clickElementByXpath(String xpath) {
-        try {
-            waitForElementVisibility(xpath);
-        } catch (Exception e) {
-            logger.error(String.format("Element with xpath %s not found", xpath));
-        }
+        waitForElementVisibility(xpath);
         driver.findElement(By.xpath(xpath)).click();
     }
 
@@ -62,42 +56,52 @@ public abstract class BasePage {
     }
 
     public String getElementText(String xpath) {
+        waitForElementVisibility(xpath);
         return driver.findElement(By.xpath(xpath)).getText();
     }
 
     public String getElementInnerText(String xpath) {
+        waitForElementVisibility(xpath);
         return driver.findElement(By.xpath(xpath)).getAttribute("innerText");
     }
 
     public String getElementTextContent(String xpath) {
+        waitForElementVisibility(xpath);
         return driver.findElement(By.xpath(xpath)).getAttribute("textContent");
     }
 
     public String getElementValue(String xpath) {
+        waitForElementVisibility(xpath);
         return driver.findElement(By.xpath(xpath)).getAttribute("value");
     }
 
     public String getElementPlaceHolder(String xpath) {
+        waitForElementVisibility(xpath);
         return driver.findElement(By.xpath(xpath)).getAttribute("placeholder");
     }
 
     public String getElementTitle(String xpath) {
+        waitForElementVisibility(xpath);
         return driver.findElement(By.xpath(xpath)).getAttribute("title");
     }
 
     public String getElementClass(String xpath) {
+        waitForElementVisibility(xpath);
         return driver.findElement(By.xpath(xpath)).getAttribute("class");
     }
 
     public String getElementStyle(String xpath) {
+        waitForElementVisibility(xpath);
         return driver.findElement(By.xpath(xpath)).getAttribute("style");
     }
 
     public void sendKeyToField(String xpath, String key) {
+        waitForElementVisibility(xpath);
         driver.findElement(By.xpath(xpath)).sendKeys(key);
     }
 
     public void clearFieldByXpath(String xpath) {
+        waitForElementVisibility(xpath);
         driver.findElement(By.xpath(xpath)).clear();
     }
 
@@ -106,7 +110,11 @@ public abstract class BasePage {
     }
 
     public String waitAndGetCurrentPageUrl(String page) {
-        wait.until(ExpectedConditions.urlToBe(page));
+        try {
+            wait.until(ExpectedConditions.urlToBe(page));
+        } catch (TimeoutException te) {
+            logger.error(te.getMessage());
+        }
         return driver.getCurrentUrl();
     }
 
@@ -136,11 +144,19 @@ public abstract class BasePage {
     }
 
     public void waitForElementVisibility(String xpath) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        } catch (TimeoutException te) {
+            logger.error(te.getMessage());
+        }
     }
 
     public void waitForElementPresence(String xpath) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+        try {
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+        } catch (TimeoutException te) {
+            logger.error(te.getMessage());
+        }
     }
 
     public void clickCollapseButton(String blockHeader) {
