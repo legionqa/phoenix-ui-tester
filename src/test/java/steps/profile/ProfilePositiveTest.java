@@ -32,9 +32,9 @@ public class ProfilePositiveTest extends BasePage {
         assertEquals("4578974", profile.getDataFromPhoneField());
     }
     @Then("Cancel button is appeared")
-        public void cancelButtonIsAppeared(){
-            assertTrue(profile.isCancelButtonDisplayed());
-        }
+    public void cancelButtonIsAppeared(){
+        assertTrue(profile.isCancelButtonDisplayed());
+    }
 
     @Then ("Verify that user name is 'Legion QA' in the User panel")
     public void verifyUserNameInUserPanel(){
@@ -42,7 +42,7 @@ public class ProfilePositiveTest extends BasePage {
     }
     @And ("Verify that user email  is 'legion.qaservices@gmail.com' in the User Panel")
     public void verifyEmailInUserPanel(){
-       assertTrue(profile.getEmailFromUserPanel().contains("legion.qaservices@gmail.com"));
+        assertTrue(profile.getEmailFromUserPanel().contains("legion.qaservices@gmail.com"));
     }
     @When("User types new data {string} in email field")
     public void userTypeDataInMailField(String text){
@@ -72,7 +72,7 @@ public class ProfilePositiveTest extends BasePage {
     }
 
     @And ("click on button Save")
-     public void userClickButtonSave(){
+    public void userClickButtonSave(){
         profile.clickSaveButton();
     }
 
