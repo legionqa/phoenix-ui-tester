@@ -175,9 +175,13 @@ public class SiteSettingsPage extends MySitesPage {
                 clickSiteSettingsButton(TEST_SITE_1_NAME);
             }
         }
-        clickElementByXpath(CATEGORY_LIST);
-        clickElementByXpath(String.format(CATEGORY_OPTION, 1));
+        selectCategoryByNumber(1);
         clickSaveButton();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assertEquals(0, errors.size());
     }
 
@@ -201,9 +205,13 @@ public class SiteSettingsPage extends MySitesPage {
                 clickSiteSettingsButton(TEST_SITE_1_NAME);
             }
         }
-        clickElementByXpath(COUNTRY_LIST);
-        clickElementByXpath(String.format(COUNTRY_OPTION, 1));
+        selectCountryByNumber(1);
         clickSaveButton();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assertEquals(0, errors.size());
     }
 
