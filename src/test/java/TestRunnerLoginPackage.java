@@ -9,9 +9,9 @@ import pages.login.LoginPage;
 import properties.PropertiesFile;
 
 @CucumberOptions(
-//        features = {"src/test/resources/login/PhoenixUILoginPageTest.feature",
-//                "src/test/resources/login/PhoenixUIForgotPassPageTest.feature",
-//                "src/test/resources/login/PhoenixUIRegistrationPageTest.feature"},
+        features = {"src/test/resources/login/PhoenixUILoginPageTest.feature",
+                "src/test/resources/login/PhoenixUIForgotPassPageTest.feature",
+                "src/test/resources/login/PhoenixUIRegistrationPageTest.feature"},
 
 //        features = {"src/test/resources/login/PhoenixUILoginPageTest.feature"},
 //        features = {"src/test/resources/login/PhoenixUIForgotPassPageTest.feature"},

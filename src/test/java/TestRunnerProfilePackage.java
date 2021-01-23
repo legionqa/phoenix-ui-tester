@@ -8,7 +8,7 @@ import pages.profile.ProfilePage;
 import properties.PropertiesFile;
 
 @CucumberOptions(
-//       // features = {"src/test/resources/profile/VisibilityLanguagesAndLinks.feature"},
+//        features = {"src/test/resources/profile/VisibilityLanguagesAndLinks.feature"},
 ////        features = {"src/test/resources/profile/PositiveTests.feature"},
 //       features = {"src/test/resources/profile/ChangeAndSaveUserData.feature"},
 ////       features = {"src/test/resources/profile/NegativeTestsFields.feature"},
