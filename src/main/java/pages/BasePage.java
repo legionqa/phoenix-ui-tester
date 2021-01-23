@@ -36,7 +36,7 @@ public abstract class BasePage {
     public static final String CHEVRON_DOWN = "fa fa-chevron-down";
     public static final String CHEVRON_UP = "fa fa-chevron-up";
 
-    public static final String CLOSE_MESSENGER_BUTTON = "//jdiv[@class='closeButton_684e']";
+    public static final String CLOSE_MESSENGER_BUTTON = "//jdiv[contains(@class, 'closeButton')]";
 
 
     public boolean isElementDisplayed(String xpath) {

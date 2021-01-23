@@ -22,7 +22,6 @@ Feature: Visibility, languages and links - Profile page
   Scenario Outline: Navigation bar language - Profile page
     When User clicks on Change language button
     And User chooses "<language>" language
-
     Then The navigation bar text in 3 sections is "<text>"
 
     Examples:
