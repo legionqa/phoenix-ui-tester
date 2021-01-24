@@ -46,7 +46,7 @@ Feature: Visibility, languages and links - Profile page
     And Name field placeholders text is "<placeholders_name_field>"
     And Phone field placeholders text is "<placeholders-phone_field>"
     And Changing the password block is "<changing_the_password_block>"
-    When User clicks expand or collapse button of the Changing the password block
+    When User clicks expand button of the Changing the password block
     Then Current password placeholder is "<current_password>"
     And New password placeholder is "<new_password>"
     And Password confirmation placeholder is "<password_confirmation>"

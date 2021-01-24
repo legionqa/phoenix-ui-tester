@@ -4,13 +4,15 @@ public class ProfilePageNegativeTest extends ProfilePage {
     public final static String MESSAGE_TEXT_TOO_SHORT = "//span[contains(text(), 'This field is too short')]";
     public final static String ERROR_MESSAGE_MAIL_FIELD = "//span[@class ='help-block']";
     public final static String FIELD = "//input[@placeholder ='%s']";
-    public final static String MAIN_PAGE_LINK = "//a[text() ='Main']";
+    public final static String MAIN_PAGE_LINK = "//a[@href ='/overview']";
     public final static String POPUP_MESSAGE_DATA_LOST = "//div[@class ='sweet-alert showSweetAlert visible']";
+    public final static String HEADER_POPUP_MESSAGE_DATA_LOST = "//div[@class='sweet-alert showSweetAlert visible']//h2";
     public final static String BAD_PASSWORD_ERROR_MESSAGE = "//div[@class ='toast-message']";
     public static final String PASSWORD_FIELD = "//input[@placeholder ='%s']";
     public static final String NAME_FIELD = "(//input[@class ='ember-view ember-text-field form-control'])[2]";
     public static final String MAIL_FIELD = "(//input[@class ='ember-view ember-text-field form-control'])[1]";
     public static final String ERROR_NAME_AND_MAIL_FIELDS = "//span[@class ='help-block']";
+
 
 
     public void shortTextNameField() {
@@ -66,6 +68,10 @@ public class ProfilePageNegativeTest extends ProfilePage {
         return getElementText(ERROR_NAME_AND_MAIL_FIELDS);
     }
 
+
+    public String textHeaderErrorDataWillBeLost(){
+        return getElementInnerText(HEADER_POPUP_MESSAGE_DATA_LOST);
     }
+}
 
 

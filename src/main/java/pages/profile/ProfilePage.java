@@ -46,6 +46,8 @@ public class ProfilePage extends BasePage {
     public static final String CONFIRMATION_PASSWORD_FIELD = "//input[@placeholder ='Password confirmation']";
     public static final String CHANGE_PASSWORD_SUCCESS_MESSAGE = "//div[@class = 'toast toast-success']";
     public static final String LOGOUT_BUTTON = "//a[text() = 'Log out']";
+    public static final String BAD_PASSWORD_MESSAGE ="//div[@class = 'toast toast-error']//div[@class='toast-message']";
+    public static final String SUCCESS_MESSAGE_ACCOUNT ="//div[@class = 'toast toast-success']//div[@class='toast-message']";
 
 
     public void navigateToProfilePage() {
@@ -257,6 +259,21 @@ public class ProfilePage extends BasePage {
     public void clickElementWithJS() {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].click()", driver.findElement(By.xpath(LOGOUT_BUTTON)));
+    }
+    public String getTextSuccessMessage(){
+        return getElementInnerText(SUCCESS_MESSAGE);
+    }
+
+        public String getTextBadPasswordMessage(){
+            return getElementInnerText(BAD_PASSWORD_MESSAGE);
+        }
+
+        public String getTextMassageSaveAccount(){
+        return getElementInnerText(SUCCESS_MESSAGE_ACCOUNT);
+        }
+
+    public void refreshPage(){
+        driver.navigate().refresh();
     }
 }
 

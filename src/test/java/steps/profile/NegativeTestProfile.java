@@ -3,6 +3,7 @@ package steps.profile;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import pages.login.LoginPage;
 import pages.profile.ProfilePage;
 import pages.profile.ProfilePageNegativeTest;
@@ -125,6 +126,16 @@ public class NegativeTestProfile {
     public void isLogonPage(){
        assertEquals(LoginPage.LOGIN_PAGE_URL, negative.getCurrentPageUrl());
     }
+    @Then("Pop-up message {string} is displayed")
+    public void textErrorDataWillBeLost(String text){
+        Assert.assertEquals(text, negative.textHeaderErrorDataWillBeLost());
+    }
+
+    @And("User clears skype fields")
+        public void userClearsSkypeField(){
+        negative.clearFieldByXpath(SKYPE_FIELD);
+    }
+
 
 
 }

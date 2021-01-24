@@ -154,6 +154,13 @@ public class ProfilePositiveTest extends BasePage {
     @And("Return all the data to its original")
     public void returnOldPassword(){
         profile.returnPasswordToOriginal();
+        profile.clickElementByXpath("//i[@class='fa fa-chevron-up']");
+        profile.refreshPage();
+        try {
+            Thread.sleep(700);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @And("User sends test.test@gm.com in the mail field")

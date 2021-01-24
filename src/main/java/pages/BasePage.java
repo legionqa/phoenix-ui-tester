@@ -183,4 +183,6 @@ public abstract class BasePage {
     public void closeMessenger() {
         clickElementByXpath(CLOSE_MESSENGER_BUTTON);
     }
+
+
 }
