@@ -1,3 +1,4 @@
+@profile
 Feature: Changing and saving user mail, name, password - Profile page
 
   Scenario: Verify functionality Changing the password

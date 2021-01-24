@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.profile.ProfilePage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,6 +18,7 @@ public class ProfilePageVisibilityLangLink {
     String currentPasswordField = "(//*[@class ='ember-view ember-text-field form-control'])[6]";
     String newPasswordField = "(//*[@class ='ember-view ember-text-field form-control'])[7]";
     String confirmNewPasswordField = "(//*[@class ='ember-view ember-text-field form-control'])[8]";
+    public static ArrayList<AssertionError> errorsList;
 
 
     public ProfilePageVisibilityLangLink() {
@@ -167,8 +169,22 @@ public class ProfilePageVisibilityLangLink {
 
     @And("success message {string} is displayed")
     public void getTextSuccessSaveAccountMessage(String text) {
-        Assert.assertEquals(text, profile.getTextMassageSaveAccount());
+        try {
+            Assert.assertEquals(text, profile.getTextMassageSaveAccount());
+        } catch (AssertionError e) {
+            errorsList.add(e);
+            profile.logger.info(e.getMessage());
+        }
+    }
 
+    @Then("Error message {string} is displayed")
+    public void verifyTextOfErrorMessageInMailField(String text) {
+        try {
+            Assert.assertEquals(text, profile.getTextErrorInMailField());
+        } catch (AssertionError e) {
+            errorsList.add(e);
+            profile.logger.info(e.getMessage());
+        }
     }
 }
 
