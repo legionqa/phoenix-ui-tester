@@ -62,5 +62,5 @@ Feature: Positive tests
       | יבן יבנוו                                                  |
       | Иван Иванов                                                |
       | Pdfhff fdf-fdffffff lsfddndKDND dnd'ed QaAsddddd fkff'ssss |
-      | ds   שגש שד ффы 7777фы  фыфы                                                        |
+      | ds   שגש שד ффы 7777фы  фыфы                               |
 

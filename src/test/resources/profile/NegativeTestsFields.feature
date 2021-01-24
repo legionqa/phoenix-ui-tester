@@ -25,8 +25,6 @@ Feature: Negative tests
       | dsdsdlds_dssdsddsdsdsd_ssssssssdfcdddd.dddddddd.ddd | This field must be a valid email address |
 
 
-
-
   Scenario Outline: Verify Data will be lost pop-up message
     When User types new data "<data_text>" in the field "<field>"
     And User click to Main in the left menu
