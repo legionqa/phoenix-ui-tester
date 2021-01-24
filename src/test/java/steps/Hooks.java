@@ -7,6 +7,7 @@ import pages.mySites.SiteSettingsPage;
 import properties.PropertiesFile;
 import steps.mySites.PhoenixUIMySitesPageTest;
 import steps.mySites.PhoenixUISitesActivationTests;
+import steps.profile.ProfilePageVisibilityLangLink;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
@@ -31,11 +32,23 @@ public class Hooks {
     @Before("@switch")
     public static void errorsListSetup() {
         PhoenixUISitesActivationTests.errors = new ArrayList<>();
+
     }
+
+    @Before("@profile")
+    public static void setupErrorsList() {
+        ProfilePageVisibilityLangLink.errorsList = new ArrayList<>();
+    }
+
 
     @After("@switch")
     public static void scenarioAssertion() {
         assertTrue(PhoenixUISitesActivationTests.errors.size() == 0);
+    }
+
+    @After("@profile")
+    public static void seizeListAssertion() {
+        assertTrue(ProfilePageVisibilityLangLink.errorsList.size() == 0);
     }
 
     @After("@reset")

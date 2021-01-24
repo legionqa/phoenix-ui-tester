@@ -25,11 +25,11 @@ Feature: Visibility, languages and links - Profile page
     Then The navigation bar text in 3 sections is "<text>"
 
     Examples:
-      | language | text |
-      | English | DASHBOARD  LEGION QA  EDIT PROFILE |
-      | Русский | DASHBOARD  LEGION QA  РЕДАКТИРОВАТЬ ПРОФИЛЬ |
-      | Українська | DASHBOARD  LEGION QA  РЕДАГУВАТИ ПРОФІЛЬ |
-      | Portuguesa | DASHBOARD  LEGION QA  EDITAR PERFIL |
+      | language   | text                                        |
+      | English    | DASHBOARD  LEGION QA  EDIT PROFILE          |
+      | Русский    | DASHBOARD  LEGION QA  РЕДАКТИРОВАТЬ ПРОФИЛЬ |
+      | Українська | DASHBOARD  LEGION QA  РЕДАГУВАТИ ПРОФІЛЬ    |
+      | Portuguesa | DASHBOARD  LEGION QA  EDITAR PERFIL         |
 
 
   Scenario: Main menu highlighting - Profile page

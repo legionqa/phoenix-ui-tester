@@ -1,2 +1,10 @@
-2021-01-24 14:11:50.675 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 87.0.4280.88 (resolved driver for Chrome 87)
-2021-01-24 14:11:50.705 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/lena/.cache/selenium/chromedriver/mac64/87.0.4280.88/chromedriver
+2021-01-25 01:34:07.113 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 87.0.4280.88 (resolved driver for Chrome 87)
+2021-01-25 01:34:07.135 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/lena/.cache/selenium/chromedriver/mac64/87.0.4280.88/chromedriver
+2021-01-25 01:34:33.516 [main] INFO  pages.profile.ProfilePage - expected:<[??]> but was:<[Аккаунт был успешно сохранен]>
+2021-01-25 01:34:35.225 [main] INFO  pages.profile.ProfilePage - expected:<[??]> but was:<[Аккаунт был успешно сохранен]>
+2021-01-25 01:34:36.898 [main] INFO  pages.profile.ProfilePage - expected:<[??]> but was:<[Аккаунт был успешно сохранен]>
+2021-01-25 01:34:59.445 [main] INFO  pages.profile.ProfilePage - expected:<[??]> but was:<[This field must be a valid email address]>
+2021-01-25 01:35:02.472 [main] INFO  pages.profile.ProfilePage - expected:<[??]> but was:<[This field must be a valid email address]>
+2021-01-25 01:35:05.724 [main] INFO  pages.profile.ProfilePage - expected:<[??]> but was:<[Invalid email address.]>
+2021-01-25 01:35:07.435 [main] INFO  pages.profile.ProfilePage - expected:<[??]> but was:<[Invalid email address.]>
+2021-01-25 01:35:09.092 [main] INFO  pages.profile.ProfilePage - expected:<[??]> but was:<[Invalid email address.]>

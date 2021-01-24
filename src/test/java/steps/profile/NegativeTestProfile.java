@@ -43,11 +43,6 @@ public class NegativeTestProfile {
         negative.sendIncorrectDataMailField(text);
     }
 
-    @Then("Error message {string} is displayed")
-    public void verifyTextOfErrorMessageInMailField(String text) {
-        assertEquals(text, negative.getTextErrorInMailField());
-    }
-
     @When("User types new data {string} in the field {string}")
     public void typesTextInTheFields(String text, String field) {
         negative.textInField(field, text);

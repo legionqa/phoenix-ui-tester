@@ -1,4 +1,4 @@
-@login
+@login @profile
 Feature: Verify error messages in all languages - Profile Page
 
   Background:
