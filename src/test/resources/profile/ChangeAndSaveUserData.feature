@@ -56,11 +56,10 @@ Feature: Changing and saving user mail, name, password - Profile page
 
     Examples:
       | language   | text_message                 |
-      | English    | Произошла ошибка Bad password |
-      | Українська | ??                            |
-      | Portuguesa | ??                            |
+      | English    | ??                           |
+      | Українська | ??                           |
+      | Portuguesa | ??                           |
       | Русский    | Аккаунт был успешно сохранен |
-
 
 
   Scenario: Verify functionality Changing mail address
