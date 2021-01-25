@@ -10,20 +10,20 @@ Feature: Negative tests
     Then Red cross is visible in the field
     And Error message This field is too short is displayed
 
-  Scenario Outline: Verify incorrect e-mail action
+  Scenario Outline: Verify incorrect e-mail action - English
     When User send incorrect data "<text>" in the mail field
     And click on button Save
-    Then Error message "<text_message>" is displayed
+    Then Error message "<text_english>" is displayed
     And Red cross is visible in the field
 
     Examples:
-      | text                                                 | text_message                             |
-      |                                                    | This field can't be blank                |
-      | ew                                                   | This field must be a valid email address |
-      | we@sa                                                | Invalid email address.                   |
+      | text                                                | text_english                             |
+      |                                                     | This field can't be blank                |
+      | ew                                                  | This field must be a valid email address |
+      | we@sa                                               | Invalid email address.                   |
       | ма@ьф.r                                             | This field must be a valid email address |
       | dsdsdlds_dssdsddsdsdsd_ssssssssdfcdddd.dddddddd.ddd | This field must be a valid email address |
-      | &*(*SSAH@jsa>>>>>>>???.com                           | This field must be a valid email address |
+
 
   Scenario Outline: Verify Data will be lost pop-up message
     When User types new data "<data_text>" in the field "<field>"

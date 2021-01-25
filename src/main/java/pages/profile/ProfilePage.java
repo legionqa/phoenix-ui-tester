@@ -1,16 +1,20 @@
 package pages.profile;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
 import pages.login.LoginPage;
+import pages.mySites.MySitesPage;
 
 import java.util.List;
 
 
 public class ProfilePage extends BasePage {
+    public static final Logger logger = LogManager.getLogger(ProfilePage.class);
     public static String PROFILE_PAGE_URL;
     public static String PROFILE_PAGE_URL_NEW_USER;
     public static String TEST_USER_MAIL;
@@ -46,6 +50,9 @@ public class ProfilePage extends BasePage {
     public static final String CONFIRMATION_PASSWORD_FIELD = "//input[@placeholder ='Password confirmation']";
     public static final String CHANGE_PASSWORD_SUCCESS_MESSAGE = "//div[@class = 'toast toast-success']";
     public static final String LOGOUT_BUTTON = "//a[text() = 'Log out']";
+    public static final String BAD_PASSWORD_MESSAGE = "//div[@class = 'toast toast-error']//div[@class='toast-message']";
+    public static final String SUCCESS_MESSAGE_ACCOUNT = "//div[@class = 'toast toast-success']//div[@class='toast-message']";
+    public final static String ERROR_MESSAGE_MAIL_FIELD = "//span[@class ='help-block']";
 
 
     public void navigateToProfilePage() {
@@ -176,7 +183,8 @@ public class ProfilePage extends BasePage {
         clearFieldByXpath(SKYPE_FIELD);
         sendKeyToField(SKYPE_FIELD, text);
     }
-    public boolean isSkypeFieldDisplayed(){
+
+    public boolean isSkypeFieldDisplayed() {
         return isElementDisplayed(SKYPE_FIELD);
     }
 
@@ -257,6 +265,26 @@ public class ProfilePage extends BasePage {
     public void clickElementWithJS() {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].click()", driver.findElement(By.xpath(LOGOUT_BUTTON)));
+    }
+
+    public String getTextSuccessMessage() {
+        return getElementInnerText(SUCCESS_MESSAGE);
+    }
+
+    public String getTextBadPasswordMessage() {
+        return getElementInnerText(BAD_PASSWORD_MESSAGE);
+    }
+
+    public String getTextMassageSaveAccount() {
+        return getElementInnerText(SUCCESS_MESSAGE_ACCOUNT);
+    }
+
+    public String getTextErrorInMailField() {
+        return getElementText(ERROR_MESSAGE_MAIL_FIELD);
+    }
+
+    public void refreshPage() {
+        driver.navigate().refresh();
     }
 }
 

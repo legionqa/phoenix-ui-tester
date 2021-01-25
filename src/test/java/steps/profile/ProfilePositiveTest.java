@@ -15,7 +15,7 @@ import static pages.profile.ProfilePage.TEST_USER_PASSWORD;
 public class ProfilePositiveTest extends BasePage {
     ProfilePage profile;
 
-    public ProfilePositiveTest(){
+    public ProfilePositiveTest() {
         profile = new ProfilePage();
     }
 
@@ -23,157 +23,176 @@ public class ProfilePositiveTest extends BasePage {
     public void MailPlaceholderText() {
         assertEquals("legion.qaservices@gmail.com", profile.getMailFieldText());
     }
+
     @And("Data in the name field is 'Legion QA'")
-    public void dataNameFieldIsLegionQA(){
+    public void dataNameFieldIsLegionQA() {
         assertEquals("Legion QA", profile.getNameFieldText());
     }
+
     @And("Data in the phone field is '4578974'")
-    public void dataInPhoneField(){
+    public void dataInPhoneField() {
         assertEquals("4578974", profile.getDataFromPhoneField());
     }
-    @Then("Cancel button is appeared")
-        public void cancelButtonIsAppeared(){
-            assertTrue(profile.isCancelButtonDisplayed());
-        }
 
-    @Then ("Verify that user name is 'Legion QA' in the User panel")
-    public void verifyUserNameInUserPanel(){
+    @Then("Cancel button is appeared")
+    public void cancelButtonIsAppeared() {
+        assertTrue(profile.isCancelButtonDisplayed());
+    }
+
+    @Then("Verify that user name is 'Legion QA' in the User panel")
+    public void verifyUserNameInUserPanel() {
         assertEquals("Legion QA", profile.getNameFromUserPanel());
     }
-    @And ("Verify that user email  is 'legion.qaservices@gmail.com' in the User Panel")
-    public void verifyEmailInUserPanel(){
-       assertTrue(profile.getEmailFromUserPanel().contains("legion.qaservices@gmail.com"));
+
+    @And("Verify that user email  is 'legion.qaservices@gmail.com' in the User Panel")
+    public void verifyEmailInUserPanel() {
+        assertTrue(profile.getEmailFromUserPanel().contains("legion.qaservices@gmail.com"));
     }
+
     @When("User types new data {string} in email field")
-    public void userTypeDataInMailField(String text){
+    public void userTypeDataInMailField(String text) {
         profile.typeNewDataInMailField(text);
     }
-    @And ("User types new data {string} in name field")
-    public void userTypeInNameField(String text){
+
+    @And("User types new data {string} in name field")
+    public void userTypeInNameField(String text) {
         profile.typeNewDataInNameField(text);
     }
-    @And ("{string} data displayed in the User panel")
-    public void newNameDisplayedInUserPanel(String text){
+
+    @And("{string} data displayed in the User panel")
+    public void newNameDisplayedInUserPanel(String text) {
         assertEquals(text, profile.getNameFromUserPanel());
     }
+
     @Then("User panel contains new {string}")
-    public void dataUserPanelContainsNewMail(String text){
+    public void dataUserPanelContainsNewMail(String text) {
         assertTrue(profile.getEmailFromUserPanel().contains(text));
     }
 
     @When("User send {string} in the Phone number field")
-    public void userSendNumberInPhoneField(String number){
+    public void userSendNumberInPhoneField(String number) {
         profile.sendNumberInPhoneField(number);
     }
 
     @And("User send {string} in the Skype number field")
-    public void userSendNewNameInSkypeField(String name){
+    public void userSendNewNameInSkypeField(String name) {
         profile.sendNameInSkypeField(name);
     }
 
-    @And ("click on button Save")
-     public void userClickButtonSave(){
+    @And("click on button Save")
+    public void userClickButtonSave() {
         profile.clickSaveButton();
     }
 
     @When("Success message is displayed")
-    public void successMessageIsDisplayed(){
+    public void successMessageIsDisplayed() {
         assertTrue(profile.successMessageIsVisible());
     }
 
-    @And ("Return all the data to its original: tel '4578974' and Skype 'Legion QA'")
-    public void returnDataPhoneAndSkypeToItsOriginal(){
+    @And("Return all the data to its original: tel '4578974' and Skype 'Legion QA'")
+    public void returnDataPhoneAndSkypeToItsOriginal() {
         profile.returnPhoneAndSkypeToOriginal();
     }
 
-    @When ("User send 'was@ist.das' in the mail field")
-    public void userSendNewMailInMailField(){
+    @When("User send 'was@ist.das' in the mail field")
+    public void userSendNewMailInMailField() {
         profile.typeNewDataInMailField("was@ist.das");
     }
 
     @And("Click cancel button")
-    public void clickCancelButton(){
+    public void clickCancelButton() {
         profile.clickCancel();
     }
 
     @Then("Verify that 'legion.qaservices@gmail.com' is displayed in mail field")
-    public void verifyDisplayedMailAddress(){
+    public void verifyDisplayedMailAddress() {
         assertEquals("legion.qaservices@gmail.com", profile.getMailFieldText());
     }
 
-    @When ("User type valid data {string} in the mail field")
-    public void enteringTextToMailField(String mail){
+    @When("User type valid data {string} in the mail field")
+    public void enteringTextToMailField(String mail) {
         profile.typeNewDataInMailField(mail);
     }
 
-    @Then ("Valid sign in the e-mail field are displayed")
-    public void validSignInMailFieldIsDisplayed(){
+    @Then("Valid sign in the e-mail field are displayed")
+    public void validSignInMailFieldIsDisplayed() {
         assertTrue(profile.isValidSignInMailFIELDDisplayed());
     }
 
     @When("User type valid data {string} in the name field")
-    public void enteringTextToNameField(String name){
+    public void enteringTextToNameField(String name) {
         profile.typeNewDataInNameField(name);
     }
 
     @Then("Valid sign in the name field is displayed")
-    public void validSignInNameFieldDisplayed(){
+    public void validSignInNameFieldDisplayed() {
         assertTrue(profile.isValidSignInNameFieldDisplayed());
     }
 
     @And("User login with test email and password legionqa.test@gmail.com : password1")
-    public void userLoginWithTestEmail(){
+    public void userLoginWithTestEmail() {
         profile.loginWithTestEmail();
     }
 
-    @And ("User go to new Profile page")
-    public void userGoToNewProfilePage(){
+    @And("User go to new Profile page")
+    public void userGoToNewProfilePage() {
         profile.goToProfilePageNewUser();
     }
 
     @And("User sends current password in the Current password field")
-    public void inputCurrentPasswordInCurrentPasswordField(){
+    public void inputCurrentPasswordInCurrentPasswordField() {
         profile.sendPasswordInCurrentField(TEST_USER_PASSWORD);
     }
 
     @And("password2 in New password and Password confirmation fields")
-    public void sendStringInNewPasswordAndConfirmationFields(){
+    public void sendStringInNewPasswordAndConfirmationFields() {
         profile.sendStringInNewPasswordAndConfirmationFields(TEST_USER_NEW_PASSWORD);
     }
 
     @And("Clicks Change button")
-    public void clickChangeButton(){
+    public void clickChangeButton() {
         profile.clickChangeButton();
     }
 
     @Then("success message is displayed")
-    public void changePasswordSuccessMassageDisplayed(){
+    public void changePasswordSuccessMassageDisplayed() {
         assertTrue(profile.changePasswordSuccessMassageDisplayed());
     }
 
     @And("Return all the data to its original")
-    public void returnOldPassword(){
+    public void returnOldPassword() {
         profile.returnPasswordToOriginal();
+        profile.clickElementByXpath("//i[@class='fa fa-chevron-up']");
+        profile.refreshPage();
+        try {
+            Thread.sleep(700);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @And("User sends test.test@gm.com in the mail field")
-    public void changeMailToNewTestMail(){
+    public void changeMailToNewTestMail() {
         profile.changeMailToNewTestMail();
     }
+
     @When("User clicks Log out button")
-    public void userClicksLogOutButton(){
+    public void userClicksLogOutButton() {
         profile.clickElementWithJS();
     }
-    @And ("User login with new test email and password test.test@gm.com : password1")
-    public void loginWithNewTestMailAndOldsPassword(){
+
+    @And("User login with new test email and password test.test@gm.com : password1")
+    public void loginWithNewTestMailAndOldsPassword() {
         profile.loginWithNewTestMail();
     }
+
     @Then("Verify that opened page is Main Page")
-    public void isMainPage(){
+    public void isMainPage() {
         assertEquals(LoginPage.MAIN_PAGE_URL, profile.getCurrentPageUrl());
     }
+
     @And("User types legionqa.test@gmail.com in the mail field")
-    public void changeMailToMailTestUser(){
+    public void changeMailToMailTestUser() {
         profile.changeMailToTestMail();
     }
 
