@@ -1,2 +1,0 @@
-2021-01-23 20:02:09.098 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 87.0.4280.88 (resolved driver for Chrome 87)
-2021-01-23 20:02:09.119 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win32\87.0.4280.88\chromedriver.exe
