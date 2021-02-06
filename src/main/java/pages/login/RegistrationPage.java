@@ -44,9 +44,9 @@ public class RegistrationPage extends BasePage {
     public final static String NO_CURRENCY_MESSAGE = "//div[@class='sweet-alert showSweetAlert visible']";
     public final static String CHECK_DATA_MESSAGE = "//div[@class='toast toast-error']";
     public final static String PASSWORD_ERROR_MESSAGE = "//div[@class='toast toast-warning']";
-    public final static String BLANK_EMAIL_MESSAGE = "//input[@type='email']/following::span[@class='help-block']";
-    public final static String INVALID_EMAIL_MESSAGE = "//input[@type='email']/following::span[@class='help-block']";
-    public final static String INVALID_NAME_MESSAGE = "//input[@type='text']/following::span[@class='help-block']";
+    public final static String BLANK_EMAIL_MESSAGE = "//input[@type='email']/following-sibling::span[@class='help-block']";
+    public final static String INVALID_EMAIL_MESSAGE = "//input[@type='email']/following-sibling::span[@class='help-block']";
+    public final static String INVALID_NAME_MESSAGE = "//input[@type='text']/following-sibling::span[@class='help-block']";
     public final static String NO_CURRENCY_TEXT1 = "//div[@class='sweet-alert showSweetAlert visible']//h2";
     public final static String NO_CURRENCY_TEXT2 = "//div[@class='sweet-alert showSweetAlert visible']//p";
     public final static String CHECK_DATA_TEXT1 = "//div[@class='toast-title']";

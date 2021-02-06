@@ -1,2 +1,288 @@
-2021-01-23 20:02:09.098 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 87.0.4280.88 (resolved driver for Chrome 87)
-2021-01-23 20:02:09.119 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win32\87.0.4280.88\chromedriver.exe
+2021-02-06 18:59:30.153 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 87.0.4280.88 (resolved driver for Chrome 87)
+2021-02-06 18:59:30.172 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win32\87.0.4280.88\chromedriver.exe
+2021-02-06 19:00:13.386 [main] ERROR pages.BasePage - Expected condition failed: waiting for visibility of element located by By.xpath: //tr (tried for 5 second(s) with 500 milliseconds interval)
+2021-02-06 19:00:41.737 [main] ERROR pages.BasePage - Expected condition failed: waiting for visibility of element located by By.xpath: //h5[text()='Settings']/ancestor::div/following-sibling::div[@class='ibox-content'] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USER-PC', ip: '192.168.1.2', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '14.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:63621}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 26967544549922abded9a0ce98c5dc3c
+2021-02-06 19:00:47.894 [main] ERROR pages.BasePage - Expected condition failed: waiting for visibility of element located by By.xpath: //h5[text()='Main settings']/ancestor::div/following-sibling::div[@class='ibox-content'] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USER-PC', ip: '192.168.1.2', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '14.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:63621}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 26967544549922abded9a0ce98c5dc3c
+2021-02-06 19:01:02.295 [main] INFO  pages.mySites.MySitesPage - expected: <Auto / Moto> but was: <Missing translation: automoto>
+2021-02-06 19:01:03.623 [main] INFO  pages.mySites.MySitesPage - expected: <Administration> but was: <Missing translation: administration>
+2021-02-06 19:01:04.787 [main] INFO  pages.mySites.MySitesPage - expected: <Banks> but was: <Missing translation: banks>
+2021-02-06 19:01:05.958 [main] INFO  pages.mySites.MySitesPage - expected: <Free online> but was: <Missing translation: freeonline>
+2021-02-06 19:01:07.213 [main] INFO  pages.mySites.MySitesPage - expected: <Business & Finance> but was: <Missing translation: business>
+2021-02-06 19:01:08.353 [main] INFO  pages.mySites.MySitesPage - expected: <Children> but was: <Missing translation: children>
+2021-02-06 19:01:09.529 [main] INFO  pages.mySites.MySitesPage - expected: <Design> but was: <Missing translation: design>
+2021-02-06 19:01:10.685 [main] INFO  pages.mySites.MySitesPage - expected: <Woman Club> but was: <Missing translation: womanclub>
+2021-02-06 19:01:11.900 [main] INFO  pages.mySites.MySitesPage - expected: <Laws> but was: <Missing translation: laws>
+2021-02-06 19:01:13.335 [main] INFO  pages.mySites.MySitesPage - expected: <Dating> but was: <Missing translation: dating>
+2021-02-06 19:01:15.604 [main] INFO  pages.mySites.MySitesPage - expected: <Online stores> but was: <Missing translation: onlinestores>
+2021-02-06 19:01:16.868 [main] INFO  pages.mySites.MySitesPage - expected: <Art> but was: <Missing translation: art>
+2021-02-06 19:01:18.070 [main] INFO  pages.mySites.MySitesPage - expected: <History> but was: <Missing translation: history>
+2021-02-06 19:01:19.486 [main] INFO  pages.mySites.MySitesPage - expected: <Cinema> but was: <Missing translation: cinema>
+2021-02-06 19:01:20.622 [main] INFO  pages.mySites.MySitesPage - expected: <Company Profile> but was: <Missing translation: company>
+2021-02-06 19:01:21.729 [main] INFO  pages.mySites.MySitesPage - expected: <Computers> but was: <Missing translation: computers>
+2021-02-06 19:01:22.870 [main] INFO  pages.mySites.MySitesPage - expected: <Literature> but was: <Missing translation: literature>
+2021-02-06 19:01:24.001 [main] INFO  pages.mySites.MySitesPage - expected: <Medicine> but was: <Missing translation: medicine>
+2021-02-06 19:01:25.312 [main] INFO  pages.mySites.MySitesPage - expected: <Men's club> but was: <Missing translation: menclub>
+2021-02-06 19:01:26.467 [main] INFO  pages.mySites.MySitesPage - expected: <Music and mp3> but was: <Missing translation: music>
+2021-02-06 19:01:27.649 [main] INFO  pages.mySites.MySitesPage - expected: <Science and education> but was: <Missing translation: science>
+2021-02-06 19:01:28.845 [main] INFO  pages.mySites.MySitesPage - expected: <Real Estate> but was: <Missing translation: realestate>
+2021-02-06 19:01:30.011 [main] INFO  pages.mySites.MySitesPage - expected: <Recreation> but was: <Missing translation: recreation>
+2021-02-06 19:01:31.382 [main] INFO  pages.mySites.MySitesPage - expected: <Weather> but was: <Missing translation: weather>
+2021-02-06 19:01:32.514 [main] INFO  pages.mySites.MySitesPage - expected: <Politics> but was: <Missing translation: politics>
+2021-02-06 19:01:33.665 [main] INFO  pages.mySites.MySitesPage - expected: <Group> but was: <Missing translation: group>
+2021-02-06 19:01:34.941 [main] INFO  pages.mySites.MySitesPage - expected: <Portals> but was: <Missing translation: portals>
+2021-02-06 19:01:36.167 [main] INFO  pages.mySites.MySitesPage - expected: <Providers> but was: <Missing translation: providers>
+2021-02-06 19:01:37.540 [main] INFO  pages.mySites.MySitesPage - expected: <Programs> but was: <Missing translation: programs>
+2021-02-06 19:01:38.744 [main] INFO  pages.mySites.MySitesPage - expected: <Food> but was: <Missing translation: food>
+2021-02-06 19:01:39.869 [main] INFO  pages.mySites.MySitesPage - expected: <Industry> but was: <Missing translation: industry>
+2021-02-06 19:01:41.050 [main] INFO  pages.mySites.MySitesPage - expected: <Travels> but was: <Missing translation: travels>
+2021-02-06 19:01:42.186 [main] INFO  pages.mySites.MySitesPage - expected: <Job> but was: <Missing translation: job>
+2021-02-06 19:01:43.530 [main] INFO  pages.mySites.MySitesPage - expected: <Radio> but was: <Missing translation: radio>
+2021-02-06 19:01:45.778 [main] INFO  pages.mySites.MySitesPage - expected: <Adult Entertainment> but was: <Missing translation: adult>
+2021-02-06 19:01:47.008 [main] INFO  pages.mySites.MySitesPage - expected: <Regional sites> but was: <Missing translation: regionalsites>
+2021-02-06 19:01:48.220 [main] INFO  pages.mySites.MySitesPage - expected: <Advertising> but was: <Missing translation: advertising>
+2021-02-06 19:01:49.654 [main] INFO  pages.mySites.MySitesPage - expected: <Religion> but was: <Missing translation: religion>
+2021-02-06 19:01:52.196 [main] INFO  pages.mySites.MySitesPage - expected: <Communication> but was: <Missing translation: communication>
+2021-02-06 19:01:53.317 [main] INFO  pages.mySites.MySitesPage - expected: <Services> but was: <Missing translation: services>
+2021-02-06 19:01:56.021 [main] INFO  pages.mySites.MySitesPage - expected: <Building> but was: <Missing translation: building>
+2021-02-06 19:01:57.532 [main] INFO  pages.mySites.MySitesPage - expected: <TV> but was: <Missing translation: tv>
+2021-02-06 19:01:58.737 [main] INFO  pages.mySites.MySitesPage - expected: <Goods and services> but was: <Missing translation: goods>
+2021-02-06 19:01:59.885 [main] INFO  pages.mySites.MySitesPage - expected: <Transfer> but was: <Missing translation: transfer>
+2021-02-06 19:02:01.158 [main] INFO  pages.mySites.MySitesPage - expected: <Hobbies> but was: <Missing translation: hobbies>
+2021-02-06 19:02:02.279 [main] INFO  pages.mySites.MySitesPage - expected: <Photography> but was: <Missing translation: photography>
+2021-02-06 19:02:03.483 [main] INFO  pages.mySites.MySitesPage - expected: <Chats and Forums> but was: <Missing translation: chats>
+2021-02-06 19:02:04.618 [main] INFO  pages.mySites.MySitesPage - expected: <Humor> but was: <Missing translation: humor>
+2021-02-06 19:02:05.810 [main] INFO  pages.mySites.MySitesPage - expected: <Other> but was: <Missing translation: other>
+2021-02-06 19:02:13.584 [main] INFO  pages.mySites.MySitesPage - expected: <Авто/мото> but was: <Missing translation: automoto>
+2021-02-06 19:02:14.749 [main] INFO  pages.mySites.MySitesPage - expected: <Администрации> but was: <Missing translation: administration>
+2021-02-06 19:02:15.912 [main] INFO  pages.mySites.MySitesPage - expected: <Банки> but was: <Missing translation: banks>
+2021-02-06 19:02:17.245 [main] INFO  pages.mySites.MySitesPage - expected: <Бесплатное в сети> but was: <Missing translation: freeonline>
+2021-02-06 19:02:18.506 [main] INFO  pages.mySites.MySitesPage - expected: <Бизнес и финансы> but was: <Missing translation: business>
+2021-02-06 19:02:19.670 [main] INFO  pages.mySites.MySitesPage - expected: <Дети> but was: <Missing translation: children>
+2021-02-06 19:02:20.882 [main] INFO  pages.mySites.MySitesPage - expected: <Дизайн> but was: <Missing translation: design>
+2021-02-06 19:02:22.083 [main] INFO  pages.mySites.MySitesPage - expected: <Женский клуб> but was: <Missing translation: womanclub>
+2021-02-06 19:02:23.284 [main] INFO  pages.mySites.MySitesPage - expected: <Законы> but was: <Missing translation: laws>
+2021-02-06 19:02:24.508 [main] INFO  pages.mySites.MySitesPage - expected: <Знакомства> but was: <Missing translation: dating>
+2021-02-06 19:02:27.020 [main] INFO  pages.mySites.MySitesPage - expected: <Интернет магазины> but was: <Missing translation: onlinestores>
+2021-02-06 19:02:28.344 [main] INFO  pages.mySites.MySitesPage - expected: <Искусство> but was: <Missing translation: art>
+2021-02-06 19:02:29.625 [main] INFO  pages.mySites.MySitesPage - expected: <История> but was: <Missing translation: history>
+2021-02-06 19:02:30.755 [main] INFO  pages.mySites.MySitesPage - expected: <Кино> but was: <Missing translation: cinema>
+2021-02-06 19:02:31.948 [main] INFO  pages.mySites.MySitesPage - expected: <Компании> but was: <Missing translation: company>
+2021-02-06 19:02:33.119 [main] INFO  pages.mySites.MySitesPage - expected: <Компьютеры> but was: <Missing translation: computers>
+2021-02-06 19:02:34.363 [main] INFO  pages.mySites.MySitesPage - expected: <Литература> but was: <Missing translation: literature>
+2021-02-06 19:02:35.756 [main] INFO  pages.mySites.MySitesPage - expected: <Медицина> but was: <Missing translation: medicine>
+2021-02-06 19:02:36.900 [main] INFO  pages.mySites.MySitesPage - expected: <Мужской клуб> but was: <Missing translation: menclub>
+2021-02-06 19:02:38.081 [main] INFO  pages.mySites.MySitesPage - expected: <Музыка и mp3> but was: <Missing translation: music>
+2021-02-06 19:02:39.210 [main] INFO  pages.mySites.MySitesPage - expected: <Наука и образование> but was: <Missing translation: science>
+2021-02-06 19:02:40.359 [main] INFO  pages.mySites.MySitesPage - expected: <Недвижимость> but was: <Missing translation: realestate>
+2021-02-06 19:02:41.580 [main] INFO  pages.mySites.MySitesPage - expected: <Отдых> but was: <Missing translation: recreation>
+2021-02-06 19:02:42.755 [main] INFO  pages.mySites.MySitesPage - expected: <Погода> but was: <Missing translation: weather>
+2021-02-06 19:02:44.025 [main] INFO  pages.mySites.MySitesPage - expected: <Политика> but was: <Missing translation: politics>
+2021-02-06 19:02:45.203 [main] INFO  pages.mySites.MySitesPage - expected: <Группа> but was: <Missing translation: group>
+2021-02-06 19:02:46.325 [main] INFO  pages.mySites.MySitesPage - expected: <Порталы> but was: <Missing translation: portals>
+2021-02-06 19:02:47.696 [main] INFO  pages.mySites.MySitesPage - expected: <Провайдеры> but was: <Missing translation: providers>
+2021-02-06 19:02:48.805 [main] INFO  pages.mySites.MySitesPage - expected: <Программы> but was: <Missing translation: programs>
+2021-02-06 19:02:49.911 [main] INFO  pages.mySites.MySitesPage - expected: <Продукты питания> but was: <Missing translation: food>
+2021-02-06 19:02:51.030 [main] INFO  pages.mySites.MySitesPage - expected: <Промышленность> but was: <Missing translation: industry>
+2021-02-06 19:02:52.199 [main] INFO  pages.mySites.MySitesPage - expected: <Путешествия> but was: <Missing translation: travels>
+2021-02-06 19:02:53.557 [main] INFO  pages.mySites.MySitesPage - expected: <Работа> but was: <Missing translation: job>
+2021-02-06 19:02:54.680 [main] INFO  pages.mySites.MySitesPage - expected: <Радио> but was: <Missing translation: radio>
+2021-02-06 19:02:56.973 [main] INFO  pages.mySites.MySitesPage - expected: <Развлечения для взрослых> but was: <Missing translation: adult>
+2021-02-06 19:02:58.132 [main] INFO  pages.mySites.MySitesPage - expected: <Региональные сайты> but was: <Missing translation: regionalsites>
+2021-02-06 19:02:59.498 [main] INFO  pages.mySites.MySitesPage - expected: <Реклама> but was: <Missing translation: advertising>
+2021-02-06 19:03:00.600 [main] INFO  pages.mySites.MySitesPage - expected: <Религия> but was: <Missing translation: religion>
+2021-02-06 19:03:01.713 [main] INFO  pages.mySites.MySitesPage - expected: <Связь> but was: <Missing translation: communication>
+2021-02-06 19:03:02.891 [main] INFO  pages.mySites.MySitesPage - expected: <Сервисы> but was: <Missing translation: services>
+2021-02-06 19:03:05.651 [main] INFO  pages.mySites.MySitesPage - expected: <Строительство> but was: <Missing translation: building>
+2021-02-06 19:03:06.785 [main] INFO  pages.mySites.MySitesPage - expected: <Телевидение> but was: <Missing translation: tv>
+2021-02-06 19:03:07.902 [main] INFO  pages.mySites.MySitesPage - expected: <Товары и услуги> but was: <Missing translation: goods>
+2021-02-06 19:03:09.088 [main] INFO  pages.mySites.MySitesPage - expected: <Транспорт> but was: <Missing translation: transfer>
+2021-02-06 19:03:10.303 [main] INFO  pages.mySites.MySitesPage - expected: <Увлечения и хобби> but was: <Missing translation: hobbies>
+2021-02-06 19:03:11.532 [main] INFO  pages.mySites.MySitesPage - expected: <Фото> but was: <Missing translation: photography>
+2021-02-06 19:03:12.713 [main] INFO  pages.mySites.MySitesPage - expected: <Чаты и Форумы> but was: <Missing translation: chats>
+2021-02-06 19:03:13.932 [main] INFO  pages.mySites.MySitesPage - expected: <Юмор> but was: <Missing translation: humor>
+2021-02-06 19:03:15.121 [main] INFO  pages.mySites.MySitesPage - expected: <Прочее> but was: <Missing translation: other>
+2021-02-06 19:03:22.865 [main] INFO  pages.mySites.MySitesPage - expected: <Авто / мото> but was: <Missing translation: automoto>
+2021-02-06 19:03:24.075 [main] INFO  pages.mySites.MySitesPage - expected: <адміністрації> but was: <Missing translation: administration>
+2021-02-06 19:03:25.242 [main] INFO  pages.mySites.MySitesPage - expected: <Банки> but was: <Missing translation: banks>
+2021-02-06 19:03:26.510 [main] INFO  pages.mySites.MySitesPage - expected: <Безкоштовне в мережі> but was: <Missing translation: freeonline>
+2021-02-06 19:03:27.721 [main] INFO  pages.mySites.MySitesPage - expected: <Бізнес і фінанси> but was: <Missing translation: business>
+2021-02-06 19:03:28.936 [main] INFO  pages.mySites.MySitesPage - expected: <Діти> but was: <Missing translation: children>
+2021-02-06 19:03:30.228 [main] INFO  pages.mySites.MySitesPage - expected: <Дизайн> but was: <Missing translation: design>
+2021-02-06 19:03:31.386 [main] INFO  pages.mySites.MySitesPage - expected: <Жіночий клуб> but was: <Missing translation: womanclub>
+2021-02-06 19:03:32.596 [main] INFO  pages.mySites.MySitesPage - expected: <Закони> but was: <Missing translation: laws>
+2021-02-06 19:03:33.811 [main] INFO  pages.mySites.MySitesPage - expected: <Знайомства> but was: <Missing translation: dating>
+2021-02-06 19:03:36.336 [main] INFO  pages.mySites.MySitesPage - expected: <Інтернет магазини> but was: <Missing translation: onlinestores>
+2021-02-06 19:03:37.482 [main] INFO  pages.mySites.MySitesPage - expected: <Мистецтво> but was: <Missing translation: art>
+2021-02-06 19:03:38.614 [main] INFO  pages.mySites.MySitesPage - expected: <Історія> but was: <Missing translation: history>
+2021-02-06 19:03:39.893 [main] INFO  pages.mySites.MySitesPage - expected: <Кіно> but was: <Missing translation: cinema>
+2021-02-06 19:03:41.068 [main] INFO  pages.mySites.MySitesPage - expected: <Компанії> but was: <Missing translation: company>
+2021-02-06 19:03:42.441 [main] INFO  pages.mySites.MySitesPage - expected: <Комп'ютери> but was: <Missing translation: computers>
+2021-02-06 19:03:43.552 [main] INFO  pages.mySites.MySitesPage - expected: <Література> but was: <Missing translation: literature>
+2021-02-06 19:03:44.731 [main] INFO  pages.mySites.MySitesPage - expected: <Медицина> but was: <Missing translation: medicine>
+2021-02-06 19:03:45.944 [main] INFO  pages.mySites.MySitesPage - expected: <Чоловічий клуб> but was: <Missing translation: menclub>
+2021-02-06 19:03:47.133 [main] INFO  pages.mySites.MySitesPage - expected: <Музика та mp3> but was: <Missing translation: music>
+2021-02-06 19:03:48.340 [main] INFO  pages.mySites.MySitesPage - expected: <Наука та освіта> but was: <Missing translation: science>
+2021-02-06 19:03:49.475 [main] INFO  pages.mySites.MySitesPage - expected: <Нерухомість> but was: <Missing translation: realestate>
+2021-02-06 19:03:50.618 [main] INFO  pages.mySites.MySitesPage - expected: <Відпочинок> but was: <Missing translation: recreation>
+2021-02-06 19:03:51.812 [main] INFO  pages.mySites.MySitesPage - expected: <Погода> but was: <Missing translation: weather>
+2021-02-06 19:03:52.955 [main] INFO  pages.mySites.MySitesPage - expected: <Політика> but was: <Missing translation: politics>
+2021-02-06 19:03:54.174 [main] INFO  pages.mySites.MySitesPage - expected: <Група> but was: <Missing translation: group>
+2021-02-06 19:03:55.376 [main] INFO  pages.mySites.MySitesPage - expected: <Портали> but was: <Missing translation: portals>
+2021-02-06 19:03:56.555 [main] INFO  pages.mySites.MySitesPage - expected: <Провайдери> but was: <Missing translation: providers>
+2021-02-06 19:03:57.698 [main] INFO  pages.mySites.MySitesPage - expected: <Програми> but was: <Missing translation: programs>
+2021-02-06 19:03:58.910 [main] INFO  pages.mySites.MySitesPage - expected: <Продукти харчування> but was: <Missing translation: food>
+2021-02-06 19:04:00.268 [main] INFO  pages.mySites.MySitesPage - expected: <Промисловість> but was: <Missing translation: industry>
+2021-02-06 19:04:01.442 [main] INFO  pages.mySites.MySitesPage - expected: <Подорожі> but was: <Missing translation: travels>
+2021-02-06 19:04:02.576 [main] INFO  pages.mySites.MySitesPage - expected: <Робота> but was: <Missing translation: job>
+2021-02-06 19:04:03.717 [main] INFO  pages.mySites.MySitesPage - expected: <радіо> but was: <Missing translation: radio>
+2021-02-06 19:04:06.206 [main] INFO  pages.mySites.MySitesPage - expected: <Розваги для дорослих> but was: <Missing translation: adult>
+2021-02-06 19:04:07.416 [main] INFO  pages.mySites.MySitesPage - expected: <Регіональні сайти> but was: <Missing translation: regionalsites>
+2021-02-06 19:04:08.605 [main] INFO  pages.mySites.MySitesPage - expected: <Реклама> but was: <Missing translation: advertising>
+2021-02-06 19:04:09.795 [main] INFO  pages.mySites.MySitesPage - expected: <Релігія> but was: <Missing translation: religion>
+2021-02-06 19:04:10.975 [main] INFO  pages.mySites.MySitesPage - expected: <Зв'язок> but was: <Missing translation: communication>
+2021-02-06 19:04:12.147 [main] INFO  pages.mySites.MySitesPage - expected: <Сервіси> but was: <Missing translation: services>
+2021-02-06 19:04:14.481 [main] INFO  pages.mySites.MySitesPage - expected: <Будівництво> but was: <Missing translation: building>
+2021-02-06 19:04:15.612 [main] INFO  pages.mySites.MySitesPage - expected: <Телебачення> but was: <Missing translation: tv>
+2021-02-06 19:04:16.725 [main] INFO  pages.mySites.MySitesPage - expected: <Товари та послуги> but was: <Missing translation: goods>
+2021-02-06 19:04:18.055 [main] INFO  pages.mySites.MySitesPage - expected: <Транспорт> but was: <Missing translation: transfer>
+2021-02-06 19:04:19.171 [main] INFO  pages.mySites.MySitesPage - expected: <Захоплення і хобі> but was: <Missing translation: hobbies>
+2021-02-06 19:04:20.342 [main] INFO  pages.mySites.MySitesPage - expected: <Фото> but was: <Missing translation: photography>
+2021-02-06 19:04:21.471 [main] INFO  pages.mySites.MySitesPage - expected: <Чати і Форуми> but was: <Missing translation: chats>
+2021-02-06 19:04:22.632 [main] INFO  pages.mySites.MySitesPage - expected: <Гумор> but was: <Missing translation: humor>
+2021-02-06 19:04:24.042 [main] INFO  pages.mySites.MySitesPage - expected: <інше> but was: <Missing translation: other>
+2021-02-06 19:04:31.610 [main] INFO  pages.mySites.MySitesPage - expected: <Auto / Moto> but was: <Missing translation: automoto>
+2021-02-06 19:04:32.787 [main] INFO  pages.mySites.MySitesPage - expected: <Administração> but was: <Missing translation: administration>
+2021-02-06 19:04:33.949 [main] INFO  pages.mySites.MySitesPage - expected: <bancos> but was: <Missing translation: banks>
+2021-02-06 19:04:35.317 [main] INFO  pages.mySites.MySitesPage - expected: <Online grátis> but was: <Missing translation: freeonline>
+2021-02-06 19:04:36.441 [main] INFO  pages.mySites.MySitesPage - expected: <Negócios e Finanças> but was: <Missing translation: business>
+2021-02-06 19:04:37.609 [main] INFO  pages.mySites.MySitesPage - expected: <crianças> but was: <Missing translation: children>
+2021-02-06 19:04:38.774 [main] INFO  pages.mySites.MySitesPage - expected: <Design> but was: <Missing translation: design>
+2021-02-06 19:04:39.921 [main] INFO  pages.mySites.MySitesPage - expected: <Clube da Mulher> but was: <Missing translation: womanclub>
+2021-02-06 19:04:41.173 [main] INFO  pages.mySites.MySitesPage - expected: <Leis> but was: <Missing translation: laws>
+2021-02-06 19:04:42.317 [main] INFO  pages.mySites.MySitesPage - expected: <namoro> but was: <Missing translation: dating>
+2021-02-06 19:04:44.741 [main] INFO  pages.mySites.MySitesPage - expected: <Lojas online> but was: <Missing translation: onlinestores>
+2021-02-06 19:04:45.870 [main] INFO  pages.mySites.MySitesPage - expected: <Arte> but was: <Missing translation: art>
+2021-02-06 19:04:47.229 [main] INFO  pages.mySites.MySitesPage - expected: <História> but was: <Missing translation: history>
+2021-02-06 19:04:48.350 [main] INFO  pages.mySites.MySitesPage - expected: <Cinema> but was: <Missing translation: cinema>
+2021-02-06 19:04:49.489 [main] INFO  pages.mySites.MySitesPage - expected: <Perfil da empresa> but was: <Missing translation: company>
+2021-02-06 19:04:50.672 [main] INFO  pages.mySites.MySitesPage - expected: <Computadores> but was: <Missing translation: computers>
+2021-02-06 19:04:51.856 [main] INFO  pages.mySites.MySitesPage - expected: <Literatura> but was: <Missing translation: literature>
+2021-02-06 19:04:53.224 [main] INFO  pages.mySites.MySitesPage - expected: <remédio> but was: <Missing translation: medicine>
+2021-02-06 19:04:54.327 [main] INFO  pages.mySites.MySitesPage - expected: <Clube dos homens> but was: <Missing translation: menclub>
+2021-02-06 19:04:55.464 [main] INFO  pages.mySites.MySitesPage - expected: <Música e mp3> but was: <Missing translation: music>
+2021-02-06 19:04:56.601 [main] INFO  pages.mySites.MySitesPage - expected: <Ciência e educação> but was: <Missing translation: science>
+2021-02-06 19:04:57.732 [main] INFO  pages.mySites.MySitesPage - expected: <Imóveis> but was: <Missing translation: realestate>
+2021-02-06 19:04:59.123 [main] INFO  pages.mySites.MySitesPage - expected: <recreação> but was: <Missing translation: recreation>
+2021-02-06 19:05:00.213 [main] INFO  pages.mySites.MySitesPage - expected: <tempo> but was: <Missing translation: weather>
+2021-02-06 19:05:01.339 [main] INFO  pages.mySites.MySitesPage - expected: <Política> but was: <Missing translation: politics>
+2021-02-06 19:05:02.568 [main] INFO  pages.mySites.MySitesPage - expected: <Grupo> but was: <Missing translation: group>
+2021-02-06 19:05:03.677 [main] INFO  pages.mySites.MySitesPage - expected: <Portais> but was: <Missing translation: portals>
+2021-02-06 19:05:05.047 [main] INFO  pages.mySites.MySitesPage - expected: <fornecedores> but was: <Missing translation: providers>
+2021-02-06 19:05:06.143 [main] INFO  pages.mySites.MySitesPage - expected: <Programas> but was: <Missing translation: programs>
+2021-02-06 19:05:07.576 [main] INFO  pages.mySites.MySitesPage - expected: <comida> but was: <Missing translation: food>
+2021-02-06 19:05:08.705 [main] INFO  pages.mySites.MySitesPage - expected: <Indústria> but was: <Missing translation: industry>
+2021-02-06 19:05:10.022 [main] INFO  pages.mySites.MySitesPage - expected: <Viagens> but was: <Missing translation: travels>
+2021-02-06 19:05:11.374 [main] INFO  pages.mySites.MySitesPage - expected: <Job> but was: <Missing translation: job>
+2021-02-06 19:05:12.488 [main] INFO  pages.mySites.MySitesPage - expected: <Radio> but was: <Missing translation: radio>
+2021-02-06 19:05:14.758 [main] INFO  pages.mySites.MySitesPage - expected: <Entretenimento para adultos> but was: <Missing translation: adult>
+2021-02-06 19:05:15.884 [main] INFO  pages.mySites.MySitesPage - expected: <Sites regionais> but was: <Missing translation: regionalsites>
+2021-02-06 19:05:17.075 [main] INFO  pages.mySites.MySitesPage - expected: <Publicidade> but was: <Missing translation: advertising>
+2021-02-06 19:05:18.192 [main] INFO  pages.mySites.MySitesPage - expected: <religião> but was: <Missing translation: religion>
+2021-02-06 19:05:19.376 [main] INFO  pages.mySites.MySitesPage - expected: <Comunicação> but was: <Missing translation: communication>
+2021-02-06 19:05:20.526 [main] INFO  pages.mySites.MySitesPage - expected: <Serviços> but was: <Missing translation: services>
+2021-02-06 19:05:23.065 [main] INFO  pages.mySites.MySitesPage - expected: <edifício> but was: <Missing translation: building>
+2021-02-06 19:05:24.185 [main] INFO  pages.mySites.MySitesPage - expected: <TV> but was: <Missing translation: tv>
+2021-02-06 19:05:25.285 [main] INFO  pages.mySites.MySitesPage - expected: <Bens e serviços> but was: <Missing translation: goods>
+2021-02-06 19:05:26.422 [main] INFO  pages.mySites.MySitesPage - expected: <Transferência> but was: <Missing translation: transfer>
+2021-02-06 19:05:27.545 [main] INFO  pages.mySites.MySitesPage - expected: <Hobbies> but was: <Missing translation: hobbies>
+2021-02-06 19:05:28.838 [main] INFO  pages.mySites.MySitesPage - expected: <Fotografia> but was: <Missing translation: photography>
+2021-02-06 19:05:29.931 [main] INFO  pages.mySites.MySitesPage - expected: <Bate-papo e fóruns> but was: <Missing translation: chats>
+2021-02-06 19:05:31.044 [main] INFO  pages.mySites.MySitesPage - expected: <Humor> but was: <Missing translation: humor>
+2021-02-06 19:05:32.172 [main] INFO  pages.mySites.MySitesPage - expected: <Outro> but was: <Missing translation: other>
+2021-02-06 19:05:37.671 [main] INFO  pages.mySites.MySitesPage - expected: <Ukraine> but was: <ukraine>
+2021-02-06 19:05:38.890 [main] INFO  pages.mySites.MySitesPage - expected: <Israel> but was: <israel>
+2021-02-06 19:05:40.165 [main] INFO  pages.mySites.MySitesPage - expected: <Russia> but was: <russia>
+2021-02-06 19:05:42.558 [main] INFO  pages.mySites.MySitesPage - expected: <USA> but was: <usa>
+2021-02-06 19:05:43.936 [main] INFO  pages.mySites.MySitesPage - expected: <Belarus> but was: <belarus>
+2021-02-06 19:05:45.145 [main] INFO  pages.mySites.MySitesPage - expected: <Germany> but was: <germany>
+2021-02-06 19:05:46.269 [main] INFO  pages.mySites.MySitesPage - expected: <Brazil> but was: <brazil>
+2021-02-06 19:05:47.422 [main] INFO  pages.mySites.MySitesPage - expected: <Poland> but was: <poland>
+2021-02-06 19:05:48.793 [main] INFO  pages.mySites.MySitesPage - expected: <Czechia> but was: <czechia>
+2021-02-06 19:05:49.869 [main] INFO  pages.mySites.MySitesPage - expected: <Thailand> but was: <thailand>
+2021-02-06 19:05:54.958 [main] INFO  pages.mySites.MySitesPage - expected: <Украина> but was: <ukraine>
+2021-02-06 19:05:56.133 [main] INFO  pages.mySites.MySitesPage - expected: <Израиль> but was: <israel>
+2021-02-06 19:05:57.281 [main] INFO  pages.mySites.MySitesPage - expected: <Россия> but was: <russia>
+2021-02-06 19:05:58.504 [main] INFO  pages.mySites.MySitesPage - expected: <Узбекистан> but was: <Uzbekistan>
+2021-02-06 19:05:59.810 [main] INFO  pages.mySites.MySitesPage - expected: <США> but was: <usa>
+2021-02-06 19:06:00.935 [main] INFO  pages.mySites.MySitesPage - expected: <Беларусь> but was: <belarus>
+2021-02-06 19:06:02.265 [main] INFO  pages.mySites.MySitesPage - expected: <Германия> but was: <germany>
+2021-02-06 19:06:03.461 [main] INFO  pages.mySites.MySitesPage - expected: <Бразилия> but was: <brazil>
+2021-02-06 19:06:04.670 [main] INFO  pages.mySites.MySitesPage - expected: <Польша> but was: <poland>
+2021-02-06 19:06:05.979 [main] INFO  pages.mySites.MySitesPage - expected: <Чехия> but was: <czechia>
+2021-02-06 19:06:07.445 [main] INFO  pages.mySites.MySitesPage - expected: <Таиланд> but was: <thailand>
+2021-02-06 19:06:12.533 [main] INFO  pages.mySites.MySitesPage - expected: <Україна> but was: <ukraine>
+2021-02-06 19:06:13.724 [main] INFO  pages.mySites.MySitesPage - expected: <Ізраїль> but was: <israel>
+2021-02-06 19:06:14.893 [main] INFO  pages.mySites.MySitesPage - expected: <Росія> but was: <russia>
+2021-02-06 19:06:16.023 [main] INFO  pages.mySites.MySitesPage - expected: <Узбекистан> but was: <Uzbekistan>
+2021-02-06 19:06:17.658 [main] INFO  pages.mySites.MySitesPage - expected: <США> but was: <usa>
+2021-02-06 19:06:18.924 [main] INFO  pages.mySites.MySitesPage - expected: <Білорусь> but was: <belarus>
+2021-02-06 19:06:20.122 [main] INFO  pages.mySites.MySitesPage - expected: <Німеччина> but was: <germany>
+2021-02-06 19:06:21.288 [main] INFO  pages.mySites.MySitesPage - expected: <Бразилія> but was: <brazil>
+2021-02-06 19:06:22.460 [main] INFO  pages.mySites.MySitesPage - expected: <Польща> but was: <poland>
+2021-02-06 19:06:23.784 [main] INFO  pages.mySites.MySitesPage - expected: <Чехія> but was: <czechia>
+2021-02-06 19:06:24.872 [main] INFO  pages.mySites.MySitesPage - expected: <Тайланд> but was: <thailand>
+2021-02-06 19:06:29.862 [main] INFO  pages.mySites.MySitesPage - expected: <Ucrânia> but was: <ukraine>
+2021-02-06 19:06:31.030 [main] INFO  pages.mySites.MySitesPage - expected: <Israel> but was: <israel>
+2021-02-06 19:06:32.181 [main] INFO  pages.mySites.MySitesPage - expected: <Rússia> but was: <russia>
+2021-02-06 19:06:33.308 [main] INFO  pages.mySites.MySitesPage - expected: <Usbequistão> but was: <Uzbekistan>
+2021-02-06 19:06:34.522 [main] INFO  pages.mySites.MySitesPage - expected: <EUA> but was: <usa>
+2021-02-06 19:06:35.703 [main] INFO  pages.mySites.MySitesPage - expected: <Bielorrússia> but was: <belarus>
+2021-02-06 19:06:36.868 [main] INFO  pages.mySites.MySitesPage - expected: <alemanha> but was: <germany>
+2021-02-06 19:06:38.074 [main] INFO  pages.mySites.MySitesPage - expected: <brasil> but was: <brazil>
+2021-02-06 19:06:39.311 [main] INFO  pages.mySites.MySitesPage - expected: <Польша> but was: <poland>
+2021-02-06 19:06:40.617 [main] INFO  pages.mySites.MySitesPage - expected: <Чехия> but was: <czechia>
+2021-02-06 19:06:41.731 [main] INFO  pages.mySites.MySitesPage - expected: <Thailand> but was: <thailand>
+2021-02-06 19:07:22.473 [main] ERROR pages.BasePage - Expected condition failed: waiting for visibility of element located by By.xpath: //span[@class='help-block'] (tried for 5 second(s) with 500 milliseconds interval)
+2021-02-06 19:07:48.980 [main] ERROR pages.BasePage - Expected condition failed: waiting for visibility of element located by By.xpath: //div[contains(@class, 'sweet-alert')] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USER-PC', ip: '192.168.1.2', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '14.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:63621}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 26967544549922abded9a0ce98c5dc3c
+2021-02-06 19:09:07.334 [main] ERROR pages.BasePage - Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='sa-icon sa-warning']//following::div[@class='sa-icon sa-success animate'] (tried for 5 second(s) with 500 milliseconds interval)
+2021-02-06 19:09:12.767 [main] INFO  pages.mySites.MySitesPage - expected: <Inactivate> but was: <Выключить>
+2021-02-06 19:09:18.494 [main] ERROR pages.BasePage - Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='sa-icon sa-warning pulseWarning']//following::div[@class='sa-icon sa-success'] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USER-PC', ip: '192.168.1.2', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '14.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:63621}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 26967544549922abded9a0ce98c5dc3c
+2021-02-06 19:09:23.659 [main] ERROR pages.BasePage - Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='sa-icon sa-warning pulseWarning']//following::div[@class='sa-icon sa-success'] (tried for 5 second(s) with 500 milliseconds interval)
+2021-02-06 19:09:29.121 [main] INFO  pages.mySites.MySitesPage - expected: <Inactivate> but was: <Выключить>
+2021-02-06 19:09:34.528 [main] ERROR pages.BasePage - Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='sa-icon sa-success animate'] (tried for 5 second(s) with 500 milliseconds interval)
+2021-02-06 19:09:39.545 [main] ERROR pages.BasePage - Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='sa-icon sa-warning pulseWarning']//following::div[@class='sa-icon sa-success animate'] (tried for 5 second(s) with 500 milliseconds interval)
+2021-02-06 19:09:47.928 [main] INFO  pages.mySites.MySitesPage - expected: <?????> but was: <Выключить>
+2021-02-06 19:09:49.128 [main] INFO  pages.mySites.MySitesPage - expected: <?????> but was: <Включить>
+2021-02-06 19:09:54.980 [main] INFO  pages.mySites.MySitesPage - expected: <?????> but was: <Выключить>
+2021-02-06 19:09:55.811 [main] INFO  pages.mySites.MySitesPage - expected: <?????> but was: <Включить>
+2021-02-06 19:09:57.967 [main] INFO  pages.mySites.MySitesPage - expected: <?????> but was: <Выключить>
+2021-02-06 19:09:59.094 [main] INFO  pages.mySites.MySitesPage - expected: <?????> but was: <Включить>
+2021-02-06 19:10:01.892 [main] INFO  pages.mySites.MySitesPage - expected: <???????> but was: <АктивацияВаш сайт был успешно активирован>
+2021-02-06 19:10:02.801 [main] INFO  pages.mySites.MySitesPage - expected: <???????> but was: <Подтвердите ваше действиеВаш сайт станет не активным в системе>
+2021-02-06 19:10:03.420 [main] INFO  pages.mySites.MySitesPage - expected: <???????> but was: <ДеактивацияВаш сайт был успешно деактивирован>
+2021-02-06 19:10:10.796 [main] INFO  pages.mySites.MySitesPage - expected: <???????> but was: <АктивацияВаш сайт был успешно активирован>
+2021-02-06 19:10:11.705 [main] INFO  pages.mySites.MySitesPage - expected: <???????> but was: <Подтвердите ваше действиеВаш сайт станет не активным в системе>
+2021-02-06 19:10:12.325 [main] INFO  pages.mySites.MySitesPage - expected: <???????> but was: <ДеактивацияВаш сайт был успешно деактивирован>
+2021-02-06 19:10:15.014 [main] INFO  pages.mySites.MySitesPage - expected: <???????> but was: <АктивацияВаш сайт был успешно активирован>
+2021-02-06 19:10:15.928 [main] INFO  pages.mySites.MySitesPage - expected: <???????> but was: <Подтвердите ваше действиеВаш сайт станет не активным в системе>
+2021-02-06 19:10:16.210 [main] INFO  pages.mySites.MySitesPage - expected: <???????> but was: <ДеактивацияВаш сайт был успешно деактивирован>

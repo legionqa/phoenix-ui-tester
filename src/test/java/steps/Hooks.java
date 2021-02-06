@@ -32,14 +32,12 @@ public class Hooks {
     @Before("@switch")
     public static void errorsListSetup() {
         PhoenixUISitesActivationTests.errors = new ArrayList<>();
-
     }
 
     @Before("@profile")
     public static void setupErrorsList() {
         ProfilePageVisibilityLangLink.errorsList = new ArrayList<>();
     }
-
 
     @After("@switch")
     public static void scenarioAssertion() {
